@@ -213,8 +213,8 @@
                         <ListBoxItem Content="1973"/>
                     </ListBox>
                     <TextBlock x:Name="TextEndWork" HorizontalAlignment="Left" Margin="23,138,0,0" TextWrapping="Wrap" Text="Día final del trabajador" VerticalAlignment="Top"/>
-
                 </Grid>
+               
 
                 <Grid x:Name="GridActualSalary" Height="111" Visibility="Visible">
                     <Grid.ColumnDefinitions>
@@ -224,8 +224,8 @@
                     </Grid.ColumnDefinitions>
                     <TextBlock x:Name="TextSalary" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Salario Actual del trabajador" VerticalAlignment="Top"/>
                     <TextBox InputScope="Number" x:Name="Salary" HorizontalAlignment="Left" Margin="10,42,0,-3" TextWrapping="Wrap" Width="456" Grid.ColumnSpan="3"  KeyDown="Salary_KeyDown"/>
-                </Grid>  
-                <Grid x:Name="GridSalary" Height="147" >
+                </Grid>
+                <Grid x:Name="GridSalary" Height="Auto" >
                     <TextBlock x:Name="TextChangeSalary" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="¿El salario del trabajador cambió en los últimos tres meses?" VerticalAlignment="Top" Width="470"/>
                     <CheckBox x:Name="YesChangedSalary" Content="Sí" HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" Click="YesChangedSalary_Click"/>
                     <CheckBox x:Name="NoChangedSalary" Content="No" HorizontalAlignment="Left" Margin="96,68,0,0" VerticalAlignment="Top" Click="NoChangedSalary_Click"/>
@@ -238,10 +238,15 @@
                     <CheckBox x:Name="TwoMonthChanged" Content="2" HorizontalAlignment="Left" Margin="87,42,0,0" VerticalAlignment="Top" Click="TwoMonthChanged_Click"/>
                     <CheckBox x:Name="ThreeMonthChanged" Content="3" HorizontalAlignment="Left" Margin="168,42,0,0" VerticalAlignment="Top" Click="ThreeMonthChanged_Click" KeyDown="ThreeMonthChanged_KeyDown"/>
                 </Grid>
-                <Grid x:Name="GridFiredJust" Height="115">
-                    <TextBlock x:Name="TextFiredJust" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="¿Renunció o despido con causa justa?" VerticalAlignment="Top"/>
-                    <CheckBox x:Name="YesFiredJust" Content="Sí" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" Click="YesFiredJust_Click"/>
-                    <CheckBox x:Name="NoFiredJust" Content="No" HorizontalAlignment="Left" Margin="96,32,0,0" VerticalAlignment="Top" Click="NoFiredJust_Click"/>
+                <Grid x:Name="GridGoodFired" Height="Auto">
+                    <CheckBox x:Name="Resign" Content="Renunció"  HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top" Click="Resign_Click"/>
+                    <CheckBox x:Name="Fired"  Content="Fue despedido"  HorizontalAlignment="Left" Margin="166,10,0,0" VerticalAlignment="Top" Click="Fired_Click"/>
+                </Grid>
+                <Grid Height="100" x:Name="GridGoodFiredOrNot" Visibility="Collapsed">
+                    <TextBlock x:Name="TextFiredNoJust" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="¿El despido fue hecho con causa justa?." VerticalAlignment="Top"/>
+                    <CheckBox x:Name="YesFiredJust" Content="Sí" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" Click="YesFiredJust_Click"/>
+                    <CheckBox x:Name="NoFiredJust" Content="No" HorizontalAlignment="Left" Margin="101,27,0,0" VerticalAlignment="Top" Click="NoFiredJust_Click"/>
+
                 </Grid>
                 <Grid x:Name="GridSalaryInKind" Height="107">
                     <TextBlock x:Name="TextSalaryInKind" HorizontalAlignment="Left" Margin="9,5,0,0" TextWrapping="Wrap" Text="¿Tiene salario en especie?" VerticalAlignment="Top"/>
@@ -256,7 +261,6 @@
                 <Grid x:Name="GridYesSalaryInKindAgreed" Height="100" Visibility="Collapsed">
                     <TextBlock x:Name="TextHowManyIsSalaryInKind" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="¿Qué valor tiene ese salario en especie?" VerticalAlignment="Top"/>
                     <TextBox x:Name="HowManyIsSalaryInKind" HorizontalAlignment="Left" Height="72" Margin="0,37,0,-9" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="456" InputScope="Number" KeyDown="HowManyIsSalaryInKind_KeyDown" TextChanged="HowManyIsSalaryInKind_TextChanged"/>
-
                 </Grid>
                 <Grid x:Name="GridHumanStupid" Height="100" Visibility="Collapsed">
                     <TextBlock x:Name="TextHumanStupid" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="Hay algun campo sin rellenar o la fecha es invalida por una incoherencia dentro del tiempo" VerticalAlignment="Top"/>
@@ -264,9 +268,7 @@
                 <Grid x:Name="GridStepTwo" Height="100">
                     <Button x:Name="StepTwo" Content="Siguiente" HorizontalAlignment="Left" Margin="305,10,0,0" VerticalAlignment="Top" Width="170" Click="StepTwo_Click"/>
                 </Grid>
-                
-
-            </StackPanel>
+           </StackPanel>
         </ScrollViewer>
 
     </Grid>

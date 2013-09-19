@@ -15,9 +15,8 @@ namespace AppLiquidacion
         // None = 0 Yes = 1 No = 2
         // MonthsChangedSalary  = 0 ,= 1, = 2 or = 3
 
-
+        public static int GoodFired;
         public static int YesOrNoSalaryChanged;
-        public static int YesOrNoFiredJust;
         public static int YesOrNoSalaryInKind;
         public static int YesOrNoSalaryInKindAgreed;
         public static DateTime DayStartWork = new DateTime();
@@ -59,30 +58,7 @@ namespace AppLiquidacion
             }
             else
                 YesOrNoSalaryChanged = 0;
-        }
-
-        private void YesFiredJust_Click(object sender, RoutedEventArgs e)
-        {
-            if (YesFiredJust.IsChecked == true)
-            {
-                NoFiredJust.IsChecked = false;
-                YesOrNoFiredJust = 1;
-            }
-            else
-                YesOrNoFiredJust = 0;
-        }
-
-        private void NoFiredJust_Click(object sender, RoutedEventArgs e)
-        {
-            if (NoFiredJust.IsChecked == true)
-            {
-                YesFiredJust.IsChecked = false;
-                YesOrNoFiredJust = 2;
-            }
-            else
-                YesOrNoFiredJust = 0;
-        }
-
+        }       
         private void YesSalaryInKind_Click(object sender, RoutedEventArgs e)
         {
             if (YesSalaryInKind.IsChecked == true)
@@ -163,7 +139,7 @@ namespace AppLiquidacion
                 YesOrNoTwoStep += 1;
            if (Salary.Text != "")
                 YesOrNoTwoStep += 1;
-           if (YesOrNoFiredJust == 1 || YesOrNoFiredJust == 2)
+           if (GoodFired == 1 || GoodFired == 2)
                 YesOrNoTwoStep += 1;
            if (YesOrNoSalaryChanged == 2)
                 YesOrNoTwoStep += 1;
@@ -282,6 +258,56 @@ namespace AppLiquidacion
             if (OldSalary.Text != "")
             ValueOldSalary = Convert.ToInt64(OldSalary.Text);
         }
+
+        private void Resign_Click(object sender, RoutedEventArgs e)
+        {
+            if (Resign.IsChecked == true)
+            {
+                Fired.IsChecked = false;
+                GoodFired = 1;
+                GridGoodFiredOrNot.Visibility = Visibility.Collapsed;
+            }
+            else
+                GoodFired = 2;
+
+        }
+
+        private void Fired_Click(object sender, RoutedEventArgs e)
+        {
+            if (Fired.IsChecked == true)
+            {
+                Resign.IsChecked = false;
+                GridGoodFiredOrNot.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                GoodFired = 0;
+                GridGoodFiredOrNot.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private void YesFiredJust_Click(object sender, RoutedEventArgs e)
+        {
+            if (YesFiredJust.IsChecked == true)
+            {
+                NoFiredJust.IsChecked = false;
+                GoodFired = 1;
+            }
+            else
+                GoodFired = 0;
+        }
+
+        private void NoFiredJust_Click(object sender, RoutedEventArgs e)
+        {
+            if (NoFiredJust.IsChecked == true)
+            {
+                YesFiredJust.IsChecked = false;
+                GoodFired = 2;
+            }
+            else
+                GoodFired = 0;
+        }
+
 
        
     }
