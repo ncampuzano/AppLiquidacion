@@ -133,9 +133,9 @@
                 </Grid>
                 <Grid x:Name="GridVacations" Height="157">
                     <TextBlock x:Name="Vacations" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="Vacaciones" VerticalAlignment="Top" FontSize="27"/>
-                    <TextBlock x:Name="TextVacations" HorizontalAlignment="Left" Margin="10,41,0,0" TextWrapping="Wrap" Text="¿Usted debe días de vacaciones?" VerticalAlignment="Top"/>
-                    <CheckBox x:Name="YesOwesVacations" Content="Sí" HorizontalAlignment="Left" Margin="23,68,0,0" VerticalAlignment="Top" Click="YesOwesVacations_Click"/>
-                    <CheckBox x:Name="NoOwesVacations" Content="No" HorizontalAlignment="Left" Margin="114,68,0,0" VerticalAlignment="Top" Click="NoOwesVacations_Click"/>
+                    <TextBlock x:Name="TextVacations" HorizontalAlignment="Left" Margin="10,41,0,0" TextWrapping="Wrap" Text="¿Usted debe al empleado días de vacaciones?" VerticalAlignment="Top"/>
+                    <CheckBox x:Name="YesOwesVacations" Content="Sí" HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" Click="YesOwesVacations_Click"/>
+                    <CheckBox x:Name="NoOwesVacations" Content="No" HorizontalAlignment="Left" Margin="101,68,0,0" VerticalAlignment="Top" Click="NoOwesVacations_Click"/>
                 </Grid>
                 <Grid x:Name="GridOwesVacations" Height="100" Visibility="Collapsed">
                     <TextBlock x:Name="TextOwesVacations" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="¿Cuántos días de vacaciones debe?" VerticalAlignment="Top"/>
