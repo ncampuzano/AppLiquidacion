@@ -1,0 +1,16 @@
+C:\Users\campu_000\Desktop\AppLiquidacion\AppLiquidacion\obj\Debug\AppLiquidacion.csprojResolveAssemblyReference.cache
+C:\Users\campu_000\Desktop\AppLiquidacion\AppLiquidacion\obj\Debug\App.g.cs
+C:\Users\campu_000\Desktop\AppLiquidacion\AppLiquidacion\obj\Debug\MainPage.g.cs
+C:\Users\campu_000\Desktop\AppLiquidacion\AppLiquidacion\obj\Debug\StepOne.g.cs
+C:\Users\campu_000\Desktop\AppLiquidacion\AppLiquidacion\obj\Debug\AppLiquidacion.g.resources
+C:\Users\campu_000\Desktop\AppLiquidacion\AppLiquidacion\Bin\Debug\ApplicationIcon.png
+C:\Users\campu_000\Desktop\AppLiquidacion\AppLiquidacion\Bin\Debug\Background.png
+C:\Users\campu_000\Desktop\AppLiquidacion\AppLiquidacion\Bin\Debug\AppLiquidacion.dll
+C:\Users\campu_000\Desktop\AppLiquidacion\AppLiquidacion\Bin\Debug\AppLiquidacion.pdb
+C:\Users\campu_000\Desktop\AppLiquidacion\AppLiquidacion\Bin\Debug\AppManifest.xaml
+C:\Users\campu_000\Desktop\AppLiquidacion\AppLiquidacion\Bin\Debug\AppLiquidacion.xap
+C:\Users\campu_000\Desktop\AppLiquidacion\AppLiquidacion\obj\Debug\AppLiquidacion.dll
+C:\Users\campu_000\Desktop\AppLiquidacion\AppLiquidacion\obj\Debug\AppLiquidacion.pdb
+C:\Users\campu_000\Desktop\AppLiquidacion\AppLiquidacion\obj\Debug\XapCacheFile.xml
+C:\Users\campu_000\Desktop\AppLiquidacion\AppLiquidacion\obj\Debug\StepTwo.g.cs
+C:\Users\campu_000\Desktop\AppLiquidacion\AppLiquidacion\obj\Debug\ThirdStep.g.cs
