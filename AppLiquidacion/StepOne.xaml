@@ -25,7 +25,7 @@
             <TextBlock x:Name="AppName" Text="AppLiquidacion" Style="{StaticResource PhoneTextNormalStyle}"/>
             <TextBlock x:Name="Step1" Text="Paso 1" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
-        <ScrollViewer HorizontalAlignment="Left" Height="597" Margin="0,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="480">
+        <ScrollViewer HorizontalAlignment="Left" Height="597" Margin="0,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="480" RenderTransformOrigin="0.501,0.515">
             <StackPanel  HorizontalAlignment="Left" Height="Auto" Grid.Row="1" VerticalAlignment="Top" Width="480">
 
                 <Grid x:Name="GridStartAndEndWork" Height="280" Visibility="Collapsed">
@@ -223,12 +223,8 @@
                         <ColumnDefinition Width="95*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock x:Name="TextSalary" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Salario Actual del trabajador" VerticalAlignment="Top"/>
-                    <TextBox InputScope="Number" x:Name="Salary" HorizontalAlignment="Left" Margin="10,42,0,-3" TextWrapping="Wrap" Width="456" Grid.ColumnSpan="3" TextChanged="Salary_TextChanged" KeyDown="Salary_KeyDown"/>
-                </Grid>
-                <Grid x:Name="GridTransportSubsidy" Height="108" Visibility="Collapsed">
-                    <TextBlock x:Name="TextTransportSubsidy" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Subsidio de Transporte" VerticalAlignment="Top"/>
-                    <TextBox InputScope="Number" x:Name="TransportSubsidy" HorizontalAlignment="Left" Height="72" Margin="10,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" TextChanged="TransportSubsidy_TextChanged"/>
-                </Grid>
+                    <TextBox InputScope="Number" x:Name="Salary" HorizontalAlignment="Left" Margin="10,42,0,-3" TextWrapping="Wrap" Width="456" Grid.ColumnSpan="3"  KeyDown="Salary_KeyDown"/>
+                </Grid>  
                 <Grid x:Name="GridSalary" Height="147" >
                     <TextBlock x:Name="TextChangeSalary" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="¿El salario del trabajador cambió en los últimos tres meses?" VerticalAlignment="Top" Width="470"/>
                     <CheckBox x:Name="YesChangedSalary" Content="Sí" HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" Click="YesChangedSalary_Click"/>

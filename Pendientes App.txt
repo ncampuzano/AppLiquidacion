@@ -1,0 +1,25 @@
+Regex para el Nombre
+Tipo de documento, con letras y es una cadena	
+Transporte subsidio
+Ortografía
+Signo peso  y lo puntico, formato de moneda.
+Vistas y codigo MVVM 
+Mejorar el despido o renuncio 
+Ayuda
+Mejorar las preguntas, mas dicientes
+Valor antiguo sea mayor salario minimo
+Politicas de minimo 
+
+
+Orden
+1)	Subsidio de Transporte.
+2)	Mejorar despido o renuncia.
+3)	Mejorar las preguntas, más diciente.
+4)	Valor del salario, antiguo salario.
+5)	Ayudas.
+6)	Ortografía.
+7)	Validacion de tiempo.
+8)	Quitar botones de inicio, nombre, tarjeta de Identidad.
+9	Validación de los botones.
+10)	Utilizar variables adecuadas (int en vez de long).
+11)	Vistas y Codigo MVVM.

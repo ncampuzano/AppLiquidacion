@@ -24,7 +24,7 @@ namespace AppLiquidacion
         public static DateTime DayEndWork = new DateTime();
         public static int MonthsChangedSalary;
         public static long  ActualSalary;
-        public static long ValueTransportationSubsidary = 0;
+        public static long ValueTransportationSubsidary = 72500;
         public static long ValueOldSalary;
         public static  long ValuePayInKind = 0;
 
@@ -201,30 +201,7 @@ namespace AppLiquidacion
 
         }
 
-        private void Salary_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            float TwoSMMLV = 1170000;
-            ActualSalary = Convert.ToInt64(Salary.Text);
-            if (Salary.Text != "")
-            {
-                if (float.Parse(Salary.Text) < TwoSMMLV)
-                {
-                    GridTransportSubsidy.Visibility = Visibility.Visible;
-                    ValueTransportationSubsidary = 0;
-                }
-                else
-                {
-                    GridTransportSubsidy.Visibility = Visibility.Collapsed;
-
-                }
-
-            }
-            else
-                GridTransportSubsidy.Visibility = Visibility.Collapsed;
-
-
-
-        }
+        
 
         private void OneMonthChanged_Click(object sender, RoutedEventArgs e)
         {
@@ -293,12 +270,6 @@ namespace AppLiquidacion
                 e.Handled = true;
             }
         }
-
-        private void TransportSubsidy_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            ValueTransportationSubsidary = Convert.ToInt64(TransportSubsidy.Text);
-        }
-
         private void HowManyIsSalaryInKind_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (HowManyIsSalaryInKind.Text != "")

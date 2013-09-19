@@ -47,18 +47,19 @@ namespace AppLiquidacion
         public ThirdStep()
         {
             double ValueLiquidate = 0;
+            int TwoSMMLV = 117000;
             InitializeComponent();
             DataOfWorker.Text = MainPage.NumberIdentificationWorker + "\n" + MainPage.NameWorker;
             
-            if (StepOne.ValueTransportationSubsidary != 0 && StepOne.YesOrNoSalaryInKindAgreed == 1 && StepOne.YesOrNoSalaryChanged == 1)
+            if (StepOne.ActualSalary < TwoSMMLV  && StepOne.YesOrNoSalaryInKindAgreed == 1 && StepOne.YesOrNoSalaryChanged == 1)
             {
                 AverageSalary = (KnowSalaryWhenItChanged() + StepOne.ValuePayInKind * 12 + StepOne.ValueTransportationSubsidary * 12) / 12;
             }
-            if (StepOne.ValueTransportationSubsidary != 0 && StepOne.YesOrNoSalaryInKindAgreed == 1)
+            if (StepOne.ActualSalary < TwoSMMLV  && StepOne.YesOrNoSalaryInKindAgreed == 1)
             {
                 AverageSalary = (StepOne.ActualSalary * 12 + StepOne.ValuePayInKind * 12) / 12;
             }
-            if (StepOne.ValueTransportationSubsidary != 0 && StepOne.YesOrNoSalaryChanged == 1)
+            if (StepOne.ActualSalary < TwoSMMLV   && StepOne.YesOrNoSalaryChanged == 1)
             {
                 AverageSalary = (StepOne.ValueTransportationSubsidary * 12 + KnowSalaryWhenItChanged()) /12;
             }
@@ -66,7 +67,7 @@ namespace AppLiquidacion
             {
                 AverageSalary = (StepOne.ValuePayInKind * 12 + KnowSalaryWhenItChanged()) / 12;
             }
-            if (StepOne.ValueTransportationSubsidary != 0)
+            if (StepOne.ActualSalary < TwoSMMLV)
             {
                 AverageSalary = (StepOne.ActualSalary * 12 + StepOne.ValueTransportationSubsidary * 12) /12;
             }
@@ -78,7 +79,7 @@ namespace AppLiquidacion
             {
                 AverageSalary = KnowSalaryWhenItChanged() / 12;
             }
-            if (StepOne.ValueTransportationSubsidary == 0 && (StepOne.YesOrNoSalaryInKindAgreed == 2 || StepOne.YesOrNoSalaryInKindAgreed == 0) && StepOne.YesOrNoSalaryChanged == 2)
+            if (StepOne.ActualSalary > TwoSMMLV && (StepOne.YesOrNoSalaryInKindAgreed == 2 || StepOne.YesOrNoSalaryInKindAgreed == 0) && StepOne.YesOrNoSalaryChanged == 2)
             {
                 AverageSalary = StepOne.ActualSalary;
             }
