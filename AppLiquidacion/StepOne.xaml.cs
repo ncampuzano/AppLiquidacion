@@ -14,7 +14,9 @@ namespace AppLiquidacion
     {
         // None = 0 Yes = 1 No = 2
         // MonthsChangedSalary  = 0 ,= 1, = 2 or = 3
-
+        short YesOrNoPointInSalary = 1;
+        short YesOrNoPointInOldSalary = 1;
+        short YesOrNoPointInSalaryInKind = 1;
         public static int GoodFired;
         public static int YesOrNoSalaryChanged;
         public static int YesOrNoSalaryInKind;
@@ -22,10 +24,10 @@ namespace AppLiquidacion
         public static DateTime DayStartWork = new DateTime();
         public static DateTime DayEndWork = new DateTime();
         public static int MonthsChangedSalary;
-        public static long  ActualSalary;
-        public static long ValueTransportationSubsidary = 72500;
-        public static long ValueOldSalary;
-        public static  long ValuePayInKind = 0;
+        public static float  ActualSalary;
+        public static int ValueTransportationSubsidary = 72500;
+        public static float ValueOldSalary;
+        public static float ValuePayInKind = 0;
 
        
         public StepOne()
@@ -220,25 +222,43 @@ namespace AppLiquidacion
 
         private void Salary_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
-            if (e.PlatformKeyCode == 190)
-            {
-                e.Handled = true;
-            }
+            
+                if (e.PlatformKeyCode == 190)
+                {
+                    if (YesOrNoPointInSalary == 2)
+                    {
+                         e.Handled = true;
+                         YesOrNoPointInSalary = 1;
+                    }
+                    YesOrNoPointInSalary = 2;
+                }
         }
 
         private void OldSalary_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
+
             if (e.PlatformKeyCode == 190)
             {
-                e.Handled = true;
+                if (YesOrNoPointInOldSalary == 2)
+                {
+                    e.Handled = true;
+                    YesOrNoPointInOldSalary = 1;
+                }
+                YesOrNoPointInOldSalary = 2;
             }
         }
 
         private void HowManyIsSalaryInKind_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
+
             if (e.PlatformKeyCode == 190)
             {
-                e.Handled = true;
+                if (YesOrNoPointInSalaryInKind == 2)
+                {
+                    e.Handled = true;
+                    YesOrNoPointInSalaryInKind = 1;
+                }
+                YesOrNoPointInSalaryInKind = 2;
             }
         }
 
@@ -252,14 +272,22 @@ namespace AppLiquidacion
         private void HowManyIsSalaryInKind_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (HowManyIsSalaryInKind.Text != "")
-             ValuePayInKind = Convert.ToInt64(HowManyIsSalaryInKind.Text); 
+             ValuePayInKind = float.Parse(HowManyIsSalaryInKind.Text);
+            if (HowManyIsSalaryInKind.Text.Contains("."))
+                YesOrNoPointInSalaryInKind = 2;
+            else
+                YesOrNoPointInSalaryInKind = 1;
 
         }
 
         private void OldSalary_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (OldSalary.Text != "")
-            ValueOldSalary = Convert.ToInt64(OldSalary.Text);
+            ValueOldSalary = float.Parse(OldSalary.Text);
+            if (OldSalary.Text.Contains("."))
+                YesOrNoPointInOldSalary = 2;
+            else
+                YesOrNoPointInOldSalary = 1;
         }
 
         private void Resign_Click(object sender, RoutedEventArgs e)
@@ -324,6 +352,17 @@ namespace AppLiquidacion
         private void HelpFired_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Cuando el despido fue con causa injusta el empleado debe recibir una indemnización,  por lo cual cambia el valor de la liquidación");
+        }
+
+        private void Salary_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (Salary.Text != "")
+                ActualSalary = float.Parse(Salary.Text);
+            if (Salary.Text.Contains("."))
+                YesOrNoPointInSalary = 2;
+            else
+                YesOrNoPointInSalary = 1;
+      
         }
 
 
