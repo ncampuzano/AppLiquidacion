@@ -49,8 +49,6 @@ namespace AppLiquidacion
             double ValueLiquidate = 0;
             int TwoSMMLV = 117000;
             InitializeComponent();
-            DataOfWorker.Text = MainPage.NumberIdentificationWorker + "\n" + MainPage.NameWorker;
-            
             if (StepOne.ActualSalary < TwoSMMLV  && StepOne.YesOrNoSalaryInKindAgreed == 1 && StepOne.YesOrNoSalaryChanged == 1)
             {
                 AverageSalary = (KnowSalaryWhenItChanged() + StepOne.ValuePayInKind * 12 + StepOne.ValueTransportationSubsidary * 12) / 12;
