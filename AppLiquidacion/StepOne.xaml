@@ -28,7 +28,7 @@
         <ScrollViewer HorizontalAlignment="Left" Height="597" Margin="0,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="480" RenderTransformOrigin="0.501,0.515">
             <StackPanel  HorizontalAlignment="Left" Height="Auto" Grid.Row="1" VerticalAlignment="Top" Width="480">
 
-                <Grid x:Name="GridStartAndEndWork" Height="280" Visibility="Collapsed">
+                <Grid x:Name="GridStartAndEndWork" Height="Auto" Visibility="Visible">
                     <ListBox x:Name="StartDays" HorizontalAlignment="Left" Height="78" Margin="23,42,0,0" VerticalAlignment="Top" Width="38">
                         <ListBoxItem Content="1"/>
                         <ListBoxItem Content="2"/>
@@ -120,8 +120,8 @@
                         <ListBoxItem Content="1974"/>
                         <ListBoxItem Content="1973"/>
                     </ListBox>
-                    <TextBlock x:Name="TextStartWork" HorizontalAlignment="Left" Margin="23,0,0,0" TextWrapping="Wrap" Text="Día de inicio del trabajador" VerticalAlignment="Top"/>
-                    <ListBox x:Name="EndDays" HorizontalAlignment="Left" Height="78" Margin="23,170,0,0" VerticalAlignment="Top" Width="38">
+                    <TextBlock x:Name="TextStartWork" HorizontalAlignment="Left" Margin="23,15,0,0" TextWrapping="Wrap" Text="Día de inicio del trabajador" VerticalAlignment="Top"/>
+                    <ListBox x:Name="EndDays" HorizontalAlignment="Left" Height="78" Margin="23,157,0,0" VerticalAlignment="Top" Width="38">
                         <ListBoxItem Content="1"/>
                         <ListBoxItem Content="2"/>
                         <ListBoxItem Content="3"/>
@@ -154,7 +154,7 @@
                         <ListBoxItem Content="30"/>
                         <ListBoxItem Content="31"/>
                     </ListBox>
-                    <ListBox x:Name="EndMonths" HorizontalAlignment="Left" Height="78" Margin="90,170,0,0" VerticalAlignment="Top" Width="100">
+                    <ListBox x:Name="EndMonths" HorizontalAlignment="Left" Height="78" Margin="90,157,0,0" VerticalAlignment="Top" Width="100">
                         <ListBoxItem Content="Enero"/>
                         <ListBoxItem Content="Febrero"/>
                         <ListBoxItem Content="Marzo"/>
@@ -168,7 +168,7 @@
                         <ListBoxItem Content="Noviembre"/>
                         <ListBoxItem Content="Diciembre"/>
                     </ListBox>
-                    <ListBox x:Name="EndYears" HorizontalAlignment="Left" Height="78" Margin="225,170,0,0" VerticalAlignment="Top" Width="100" >
+                    <ListBox x:Name="EndYears" HorizontalAlignment="Left" Height="78" Margin="224,152,0,0" VerticalAlignment="Top" Width="100" >
                         <ListBoxItem Content="2013"/>
                         <ListBoxItem Content="2012"/>
                         <ListBoxItem Content="2011"/>
@@ -212,7 +212,7 @@
                         <ListBoxItem Content="1974"/>
                         <ListBoxItem Content="1973"/>
                     </ListBox>
-                    <TextBlock x:Name="TextEndWork" HorizontalAlignment="Left" Margin="23,138,0,0" TextWrapping="Wrap" Text="Día final del trabajador" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="TextEndWork" HorizontalAlignment="Left" Margin="23,125,0,0" TextWrapping="Wrap" Text="Último día de empleo del trabajador" VerticalAlignment="Top"/>
                 </Grid>
 
 

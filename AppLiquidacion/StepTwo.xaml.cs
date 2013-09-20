@@ -101,7 +101,7 @@ namespace AppLiquidacion
                      ListBoxItem selectedYear = Years.SelectedItem as ListBoxItem;
                      int YearText = int.Parse(selectedYear.Content.ToString());
                      DayNoPaySeverence = new DateTime(YearText, Months.SelectedIndex + 1, Days.SelectedIndex + 1);
-                     if (DayNoPaySeverence != null && DateTime.Now > DayNoPaySeverence)
+                     if (DayNoPaySeverence != null && DateTime.Now > DayNoPaySeverence && StepOne.DayStartWork <= DayNoPaySeverence)
                         YesOrNoLiquidate += 1;
                 }
             if (YesOrNoOwesVacations == 1 && DaysOwesVacations.Text != "")
@@ -115,7 +115,10 @@ namespace AppLiquidacion
                 YesOrNoLiquidate = 0;
             }
             else
+            {
                 GridHumanStupid.Visibility = Visibility.Visible;
+                YesOrNoLiquidate = 0;
+            }
         }
 
         private void DaysOwesVacations_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)

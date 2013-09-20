@@ -126,9 +126,9 @@ namespace AppLiquidacion
             }
             if (EndDays.SelectedIndex != -1 && EndMonths.SelectedIndex != -1 && EndYears.SelectedIndex != -1)
             {
-                ListBoxItem selectedEndYear = StartYears.SelectedItem as ListBoxItem;
+                ListBoxItem selectedEndYear = EndYears.SelectedItem as ListBoxItem;
                 int EndYearText = int.Parse(selectedEndYear.Content.ToString());
-                DayEndWork = new DateTime(EndYearText, EndMonths.SelectedIndex + 1, EndDays.SelectedIndex + 1);
+                DayEndWork = new DateTime(EndYearText ,(EndMonths.SelectedIndex + 1), (EndDays.SelectedIndex + 1));
             }
             
             int YesOrNoTwoStep = 0;
@@ -173,7 +173,10 @@ namespace AppLiquidacion
                YesOrNoTwoStep = 0;
            }
            else
+           {
                GridHumanStupid.Visibility = Visibility.Visible;
+               YesOrNoTwoStep = 0;
+           }
 
         }
 

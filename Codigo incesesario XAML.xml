@@ -1,0 +1,8 @@
+TextChanged="Salary_TextChanged"
+<Grid x:Name="GridTransportSubsidy" Height="108" Visibility="Collapsed">
+                    <TextBlock x:Name="TextTransportSubsidy" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Subsidio de Transporte" VerticalAlignment="Top"/>
+                    <TextBox InputScope="Number" x:Name="TransportSubsidy" HorizontalAlignment="Left" Height="72" Margin="10,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" TextChanged="TransportSubsidy_TextChanged"/>
+                </Grid>
+				
+				
+<TextBlock x:Name="TextFiredJust" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="¿Renunció o despido con causa justa?" VerticalAlignment="Top"/>

@@ -12,14 +12,16 @@ Politicas de minimo
 
 
 Orden
-1)	Subsidio de Transporte.
-2)	Mejorar despido o renuncia.
-3)	Mejorar las preguntas, más diciente.
-4)	Valor del salario, antiguo salario.
-5)	Ayudas.
-6)	Ortografía.
-7)	Validacion de tiempo.
-8)	Quitar botones de inicio, nombre, tarjeta de Identidad.
-9	Validación de los botones.
-10)	Utilizar variables adecuadas (int en vez de long).
-11)	Vistas y Codigo MVVM.
+1)	Subsidio de Transporte. :)
+2)	Mejorar despido o renuncia. :) 
+3)	Mejorar las preguntas, más diciente. :) 
+4)	Valor del salario, antiguo salario. :) 
+5)	Ayudas.  :) 
+6)	Validacion de tiempo.
+7)	Quitar botones de inicio, nombre, tarjeta de Identidad.
+8)	Cesantías.
+9)	Validación de los botones.
+10)	Validación de las reglas actuales.
+11)	Ortografía.
+12)	Utilizar variables adecuadas (int en vez de long).
+13)	Vistas y Codigo MVVM.
