@@ -308,6 +308,21 @@ namespace AppLiquidacion
                 GoodFired = 0;
         }
 
+        private void HelpSalaryInKind_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("El salario en especie hace referencia a un pago que no sea monetario, por ejemplo alimentación, ropa, entre otros");
+        }
+
+        private void HelpChangedSalary_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Si ha habido un cambio dentro en el salario con respecto a los últimos tres meses, el valor de la liquidación cambiará");
+        }
+
+        private void HelpFired_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Cuando el despido fue con causa injusta el empleado debe recibir una indemnización,  por lo cual cambia el valor de la liquidación");
+        }
+
 
        
     }

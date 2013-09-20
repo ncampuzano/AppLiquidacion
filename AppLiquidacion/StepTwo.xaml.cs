@@ -131,5 +131,10 @@ namespace AppLiquidacion
             if (DaysOwesVacations.Text != "")
             NumberDaysOwesVacations = Convert.ToInt64(DaysOwesVacations.Text);
         }
+
+        private void HelpOwesVacations_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Todos los empleados tienen 15 días habiles al año de vacaciones, si usted le debe algún día vacaciones a su empleado afectará el valor de la liquidación");
+        }
     }
 }
