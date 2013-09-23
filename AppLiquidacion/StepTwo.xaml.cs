@@ -131,8 +131,16 @@ namespace AppLiquidacion
 
         private void DaysOwesVacations_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (DaysOwesVacations.Text != "")
+            if (DaysOwesVacations.Text != "" && !DaysOwesVacations.Text.Contains("-") && !DaysOwesVacations.Text.Contains(",") && DaysOwesVacations.Text.IndexOf(".") != 0)
             NumberDaysOwesVacations = Convert.ToInt64(DaysOwesVacations.Text);
+            if (DaysOwesVacations.Text.IndexOf(".") == 0 || DaysOwesVacations.Text.IndexOf("-") == 0 || DaysOwesVacations.Text.IndexOf(",") == 0)
+                DaysOwesVacations.Text = "";
+            else
+            {
+                if (DaysOwesVacations.Text.Contains("-") || DaysOwesVacations.Text.Contains(","))
+                    DaysOwesVacations.Text = DaysOwesVacations.Text.Substring(0, DaysOwesVacations.Text.IndexOf("-"));
+            }
+
         }
 
         private void HelpOwesVacations_Click(object sender, RoutedEventArgs e)

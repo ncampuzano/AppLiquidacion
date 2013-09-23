@@ -21,8 +21,9 @@ Orden
 7)	Quitar botones de inicio, nombre, tarjeta de Identidad. :)
 8)	Formato de Moneda :)
 9)	Validación de los botones. :)
-10)	Cesantías.
-11)	Validación de las reglas actuales.
+10)	Cesantías. :) 
+11)	Replicar lo de la moneda a los demas.
+12)	Validación de las reglas actuales.
 12)	Ortografía.
-13)	Utilizar variables adecuadas (int en vez de long).
-14)	Vistas y Codigo MVVM.
+14)	Utilizar variables adecuadas (int en vez de long).
+15)	Vistas y Codigo MVVM.
