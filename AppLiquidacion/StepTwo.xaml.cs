@@ -12,7 +12,7 @@ namespace AppLiquidacion
 {
     public partial class StepTwo : PhoneApplicationPage
     {
-        public static int YesOrNoPaySerenceAtTheTime;
+        public static int YesOrNoPaySevenceAtTheTime;
         public static int YesOrNoOwesVacations;
         public static int YesOrNoLiquidate;
         public static DateTime DayNoPaySeverence = new DateTime();
@@ -28,8 +28,9 @@ namespace AppLiquidacion
             if (YesPaySeverence.IsChecked == true)
             {
                 GridNoPaySeverence.Visibility = Visibility.Collapsed;
+                GridRecomendation.Visibility = Visibility.Collapsed;
                 NoPaySeverence.IsChecked = false;
-                YesOrNoPaySerenceAtTheTime = 1;
+                YesOrNoPaySevenceAtTheTime = 1;
             }
         }
 
@@ -39,11 +40,11 @@ namespace AppLiquidacion
             {
                 GridNoPaySeverence.Visibility = Visibility.Visible;
                 YesPaySeverence.IsChecked = false;
-                YesOrNoPaySerenceAtTheTime = 2;
+                YesOrNoPaySevenceAtTheTime = 2;
             }
             else
             {  
-                    YesOrNoPaySerenceAtTheTime = 0;
+                    YesOrNoPaySevenceAtTheTime = 0;
                 GridNoPaySeverence.Visibility = Visibility.Collapsed;
             }
 
@@ -93,9 +94,9 @@ namespace AppLiquidacion
             
 
             
-            if (YesOrNoPaySerenceAtTheTime == 1)
+            if (YesOrNoPaySevenceAtTheTime == 1)
                 YesOrNoLiquidate += 1;
-            if (YesOrNoPaySerenceAtTheTime == 2 && Days.SelectedIndex != -1 && Months.SelectedIndex != -1 && Years.SelectedIndex != -1)
+            if (YesOrNoPaySevenceAtTheTime == 2 && Days.SelectedIndex != -1 && Months.SelectedIndex != -1 && Years.SelectedIndex != -1)
                 {
                      
                      ListBoxItem selectedYear = Years.SelectedItem as ListBoxItem;

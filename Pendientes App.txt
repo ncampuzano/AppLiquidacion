@@ -22,8 +22,10 @@ Orden
 8)	Formato de Moneda :)
 9)	Validación de los botones. :)
 10)	Cesantías. :) 
-11)	Replicar lo de la moneda a los demas.
+11)	Replicar lo de la moneda a los demas. :) 
 12)	Validación de las reglas actuales.
-12)	Ortografía.
-14)	Utilizar variables adecuadas (int en vez de long).
-15)	Vistas y Codigo MVVM.
+13)	Ortografía.
+14)	Compilar y desplegar la aplicación
+-----------------------------------------------------------------------------
+15)	Utilizar variables adecuadas (int en vez de long).
+16)	Vistas y Codigo MVVM.
