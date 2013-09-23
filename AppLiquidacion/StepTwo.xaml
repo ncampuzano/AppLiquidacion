@@ -22,15 +22,15 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="AppLiquidacion" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="AppLiquidación." Style="{StaticResource PhoneTextNormalStyle}"/>
             <TextBlock Text="Paso 2" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
         <ScrollViewer HorizontalAlignment="Left" Height="607" Grid.Row="1" VerticalAlignment="Top" Width="480">
             <StackPanel Height="Auto" Width="478">
                 <Grid x:Name="GridSeverence" Height="Auto">
-                    <TextBlock x:Name="TextSeverance" HorizontalAlignment="Left" Margin="9,11,0,0" TextWrapping="Wrap" Text="Cesantías" VerticalAlignment="Top" FontSize="27"/>
-                    <CheckBox x:Name="YesPaySeverence" Content="Sí" HorizontalAlignment="Left" Margin="10,229,0,0" VerticalAlignment="Top" Click="YesPaySeverence_Click"/>
-                    <CheckBox x:Name="NoPaySeverence" Content="No" HorizontalAlignment="Left" Margin="110,229,0,0" VerticalAlignment="Top" Click="NoPaySeverence_Click" RenderTransformOrigin="0.5,0.5"/>
+                    <TextBlock x:Name="TextSeverance" HorizontalAlignment="Left" Margin="9,11,0,0" TextWrapping="Wrap" Text="Cesantías." VerticalAlignment="Top" FontSize="27"/>
+                    <CheckBox x:Name="YesPaySeverence" Content="Sí." HorizontalAlignment="Left" Margin="10,229,0,0" VerticalAlignment="Top" Click="YesPaySeverence_Click"/>
+                    <CheckBox x:Name="NoPaySeverence" Content="No." HorizontalAlignment="Left" Margin="110,229,0,0" VerticalAlignment="Top" Click="NoPaySeverence_Click" RenderTransformOrigin="0.5,0.5"/>
                     <TextBlock x:Name="TextSeverence" HorizontalAlignment="Left" Margin="7,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.512,0.538" Height="172" Width="461">
                     	<Run Text="Si el trabajador ha estado durante dos años diferentes y usted ha pagado las cesantías como lo indicia la ley, seleccione sí. Igualmente si "/>
                     	<Run Text="el tiempo de trabajo del empleado no a transcurrido en dos años diferentes seleccione sí. De forma contraria a estas dos opciones seleccione No."/>
@@ -132,24 +132,24 @@
                         <ListBoxItem Content="1973"/>
                     </ListBox>
                     <Button x:Name="HelpPayNoSeverence" FontSize="18" Content="¿?" HorizontalAlignment="Left" Margin="404,69,0,0" VerticalAlignment="Top" Click="HelpPayNoSeverence_Click"/>
-                    <Button x:Name="Recomendation" Content="Recomendación" HorizontalAlignment="Left" Margin="294,131,0,0" VerticalAlignment="Top" Width="184" Height="70" FontSize="18" Click="Recomendation_Click"/>
+                    <Button x:Name="Recomendation" Content="Recomendación." HorizontalAlignment="Left" Margin="294,131,0,0" VerticalAlignment="Top" Width="184" Height="70" FontSize="18" Click="Recomendation_Click"/>
                 </Grid>
                 <Grid x:Name="GridRecomendation" Height="Auto" Visibility="Collapsed">
-                    <TextBlock  x:Name="TextRecomandation" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Es mejor hacer la liquidación con el pago cumplido de las censantías,de lo contrario la suma subirá exponencialmente. Así que le recomendamos que pague las censantías que debe antes de liquidar al trabajador" VerticalAlignment="Top" Visibility="Visible"/>
+                    <TextBlock  x:Name="TextRecomandation" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Es mejor hacer la liquidación con el pago cumplido de las cesantías,de lo contrario la suma subirá exponencialmente. Así que le recomendamos que pague las censantías que debe antes de liquidar al trabajador" VerticalAlignment="Top" Visibility="Visible"/>
                 </Grid>
                 <Grid x:Name="GridVacations" Height="157">
-                    <TextBlock x:Name="Vacations" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="Vacaciones" VerticalAlignment="Top" FontSize="27"/>
-                    <TextBlock x:Name="TextVacations" HorizontalAlignment="Left" Margin="10,41,0,0" TextWrapping="Wrap" Text="¿Usted debe al empleado días de vacaciones?" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="Vacations" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="Vacaciones." VerticalAlignment="Top" FontSize="27"/>
+                    <TextBlock x:Name="TextVacations" HorizontalAlignment="Left" Margin="10,41,0,0" TextWrapping="Wrap" Text="¿Usted debe al empleado días de vacaciones?." VerticalAlignment="Top"/>
                     <CheckBox x:Name="YesOwesVacations" Content="Sí" HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" Click="YesOwesVacations_Click"/>
                     <CheckBox x:Name="NoOwesVacations" Content="No" HorizontalAlignment="Left" Margin="101,68,0,0" VerticalAlignment="Top" Click="NoOwesVacations_Click"/>
                     <Button x:Name="HelpOwesVacations" FontSize="18" Content="¿?" HorizontalAlignment="Left" Margin="402,78,0,0" VerticalAlignment="Top" Click="HelpOwesVacations_Click"/>
                 </Grid>
                 <Grid x:Name="GridOwesVacations" Height="100" Visibility="Collapsed">
-                    <TextBlock x:Name="TextOwesVacations" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="¿Cuántos días de vacaciones debe?" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="TextOwesVacations" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="¿Cuántos días de vacaciones debe?." VerticalAlignment="Top"/>
                     <TextBox x:Name="DaysOwesVacations" InputScope="Number" HorizontalAlignment="Left" Height="72" Margin="10,37,0,-9" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="456" KeyDown="DaysOwesVacations_KeyDown" TextChanged="DaysOwesVacations_TextChanged"/>
                 </Grid>
                 <Grid x:Name="GridHumanStupid" Height="100" Visibility="Collapsed">
-                    <TextBlock x:Name="TextHumanStupid" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="Hay algun campo sin rellenar o la fecha es invalida por una incoherencia dentro del tiempo" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="TextHumanStupid" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="Hay algún campo sin rellenar o la fecha es invalida por una incoherencia dentro del tiempo" VerticalAlignment="Top"/>
                 </Grid>
                 <Grid Height="123">
                     <Button x:Name="Liquidate" Content="Liquidar" HorizontalAlignment="Left" Margin="324,45,0,0" VerticalAlignment="Top" Width="154" Click="Liquidate_Click"/>
