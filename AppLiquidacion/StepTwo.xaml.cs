@@ -139,5 +139,16 @@ namespace AppLiquidacion
         {
             MessageBox.Show("Todos los empleados tienen 15 días habiles al año de vacaciones, si usted le debe algún día vacaciones a su empleado afectará el valor de la liquidación");
         }
+
+        private void HelpPaySeverence_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Las cesantias son calculadas por el empleador todos los 30 de diciembre de cada año, y pueden ser cosgindas al fondo máximo al 14 de Febrero del siguiente año, si usted ha generado el proceso adecuadamente, seleccione Sí, de lo contrario seleccione No");
+        }
+
+        private void HelpPayNoSeverence_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Para este caso usted debe escoger la última fecha en la que pago la cesantías al trabajador, si nunca lo ha hecho, elija la fecha ed inicio del trabajador.");
+        }
+
     }
 }

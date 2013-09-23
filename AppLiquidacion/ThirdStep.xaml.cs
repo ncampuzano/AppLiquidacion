@@ -88,9 +88,18 @@ namespace AppLiquidacion
                 }
             if (StepTwo.YesOrNoPaySerenceAtTheTime == 2)
                 {
-                    ValueLiquidate += ((DateTime.Now - StepTwo.DayNoPaySeverence).TotalDays * AverageSalary) / 360;
+                    ValueLiquidate += ((StepOne.DayEndWork - StepTwo.DayNoPaySeverence).TotalDays * AverageSalary) / 360;
                 }
-            ValueLiquidateNumber.Text = ValueLiquidate.ToString()  ;
+            if (StepOne.DayEndWork.Year != StepOne.DayStartWork.Year)
+                {
+                    DateTime ActualYear = new DateTime(StepOne.DayEndWork.Year, 1, 1);
+                    ValueLiquidate += ((StepOne.DayEndWork - ActualYear).TotalDays * AverageSalary) / 360;
+                }
+            else
+                {
+                    ValueLiquidate += ((StepOne.DayEndWork - StepOne.DayStartWork).TotalDays * AverageSalary) / 360;
+                }
+            ValueLiquidateNumber.Text = Convert.ToInt32(ValueLiquidate).ToString() ;
 
         }
       }

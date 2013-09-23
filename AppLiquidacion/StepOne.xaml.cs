@@ -232,6 +232,10 @@ namespace AppLiquidacion
                     }
                     YesOrNoPointInSalary = 2;
                 }
+                if (e.PlatformKeyCode == 80)
+                {
+                    e.Handled = true;
+                }
         }
 
         private void OldSalary_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)

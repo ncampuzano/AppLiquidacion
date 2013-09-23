@@ -28,12 +28,16 @@
         <ScrollViewer HorizontalAlignment="Left" Height="607" Grid.Row="1" VerticalAlignment="Top" Width="480">
             <StackPanel Height="Auto" Width="478">
                 <Grid x:Name="GridSeverence" Height="Auto">
-                    <TextBlock x:Name="TextSeverance" HorizontalAlignment="Left" Margin="9,11,0,0" TextWrapping="Wrap" Text="Censantías" VerticalAlignment="Top" FontSize="27"/>
-                    <CheckBox x:Name="YesPaySeverence" Content="Sí" HorizontalAlignment="Left" Margin="7,131,0,0" VerticalAlignment="Top" Click="YesPaySeverence_Click"/>
-                    <CheckBox x:Name="NoPaySeverence" Content="No" HorizontalAlignment="Left" Margin="98,132,0,0" VerticalAlignment="Top" Click="NoPaySeverence_Click" RenderTransformOrigin="0.5,0.5"/>
-                    <TextBlock x:Name="TextSeverence" HorizontalAlignment="Left" Margin="7,52,0,0" TextWrapping="Wrap" Text="La siguiente pregunta hace referencia al ultimo dia el cual se pago las cesantias. Por lo cual, al dia de hoy  usted ha pagado las cesantias?" VerticalAlignment="Top" RenderTransformOrigin="0.512,0.538"/>
+                    <TextBlock x:Name="TextSeverance" HorizontalAlignment="Left" Margin="9,11,0,0" TextWrapping="Wrap" Text="Cesantías" VerticalAlignment="Top" FontSize="27"/>
+                    <CheckBox x:Name="YesPaySeverence" Content="Sí" HorizontalAlignment="Left" Margin="10,229,0,0" VerticalAlignment="Top" Click="YesPaySeverence_Click"/>
+                    <CheckBox x:Name="NoPaySeverence" Content="No" HorizontalAlignment="Left" Margin="110,229,0,0" VerticalAlignment="Top" Click="NoPaySeverence_Click" RenderTransformOrigin="0.5,0.5"/>
+                    <TextBlock x:Name="TextSeverence" HorizontalAlignment="Left" Margin="7,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.512,0.538" Height="172" Width="461">
+                    	<Run Text="Si el trabajador ha estado durante dos años diferentes y usted ha pagado las cesantías como lo indicia la ley, seleccione sí. Igualmente si "/>
+                    	<Run Text="el tiempo de trabajo del empleado no a transcurrido en dos años diferentes seleccione sí. De forma contraria a estas dos opciones seleccione No."/>
+                    </TextBlock>
+                    <Button x:Name="HelpPaySeverence" FontSize="18" Content="¿?" HorizontalAlignment="Left" Margin="402,239,0,0" VerticalAlignment="Top" Click="HelpPaySeverence_Click"/>
                 </Grid>
-                
+
                 <Grid x:Name="GridNoPaySeverence" Height="201" Visibility="Collapsed">
                     <TextBlock x:Name="TextNoPaySeverence" HorizontalAlignment="Left" Margin="15,0,0,0" TextWrapping="Wrap" Text="¿Hace cuánto no ha pagado las cesantias?" VerticalAlignment="Top"/>
                     <ListBox x:Name="Days" HorizontalAlignment="Left" Height="78" Margin="15,48,0,0" VerticalAlignment="Top" Width="38">
@@ -127,6 +131,7 @@
                         <ListBoxItem Content="1974"/>
                         <ListBoxItem Content="1973"/>
                     </ListBox>
+                    <Button x:Name="HelpPayNoSeverence" FontSize="18" Content="¿?" HorizontalAlignment="Left" Margin="404,69,0,0" VerticalAlignment="Top" Click="HelpPayNoSeverence_Click"/>
                     <Button x:Name="Recomendation" Content="Recomendación" HorizontalAlignment="Left" Margin="294,131,0,0" VerticalAlignment="Top" Width="184" Height="70" FontSize="18" Click="Recomendation_Click"/>
                 </Grid>
                 <Grid x:Name="GridRecomendation" Height="Auto" Visibility="Collapsed">

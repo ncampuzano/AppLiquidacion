@@ -6,3 +6,15 @@ TextChanged="Salary_TextChanged"
 				
 				
 <TextBlock x:Name="TextFiredJust" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="¿Renunció o despido con causa justa?" VerticalAlignment="Top"/>
+
+
+			<TextBlock x:Name="TextDataWorker" HorizontalAlignment="Left" Margin="9,92,0,0" TextWrapping="Wrap" Text="Datos del trabajador" VerticalAlignment="Top" FontSize="30"/>
+            <TextBox x:Name="BoxNameWorker" HorizontalAlignment="Left" Height="72" Margin="-1,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" InputScope="PersonalFullName"/>
+            <TextBlock x:Name="TextName" HorizontalAlignment="Left" Margin="9,159,0,0" TextWrapping="Wrap" Text="Nombre" VerticalAlignment="Top" FontSize="27"/>
+            <TextBlock x:Name="TextIdentification" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Numero de identificacion " VerticalAlignment="Top" FontSize="27" Margin="9,300,0,0"/>
+            <TextBox InputScope="Number" x:Name="IdentificationWorker" HorizontalAlignment="Left" Height="72" Margin="1,345,-1,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Text="" KeyDown="IdentificationWorker_KeyDown"/>
+            <Button x:Name="Comenzar" Content="Comenzar" HorizontalAlignment="Left" Margin="289,535,0,0" VerticalAlignment="Top" Click="Comenzar_Click"/>
+            <TextBlock x:Name="TextTypeIdentification" HorizontalAlignment="Left" Margin="10,422,0,0" TextWrapping="Wrap" Text="¿Cuál es el tipo de identificación?" VerticalAlignment="Top" FontSize="23"/>
+            <CheckBox x:Name="TI" Content="TI" HorizontalAlignment="Left" Margin="9,458,0,0" VerticalAlignment="Top" Click="TI_Click"/>
+            <CheckBox x:Name="CC" Content="CC" HorizontalAlignment="Left" Margin="95,458,0,0" VerticalAlignment="Top" Click="CC_Click"/>
+            <CheckBox x:Name="CE" Content="CE" HorizontalAlignment="Left" Margin="191,458,0,0" VerticalAlignment="Top" Click="CE_Click"/>
