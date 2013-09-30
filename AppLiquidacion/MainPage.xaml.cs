@@ -14,15 +14,20 @@ using Microsoft.Phone.Controls;
 namespace AppLiquidacion
 {
     public partial class MainPage : PhoneApplicationPage
-    {      
+    {
         public MainPage()
         {
             InitializeComponent();
         }
 
-        private void Comenzar_Click(object sender, RoutedEventArgs e)
+        private void LiquidationWage_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/StepOne.xaml", UriKind.Relative));
+        }
+
+        private void Payroll_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/StartPayroll.xaml", UriKind.Relative));
         }
 
 

@@ -14,9 +14,6 @@ namespace AppLiquidacion
     {
         // None = 0 Yes = 1 No = 2
         // MonthsChangedSalary  = 0 ,= 1, = 2 or = 3
-        short YesOrNoPointInSalary = 1;
-        short YesOrNoPointInOldSalary = 1;
-        short YesOrNoPointInSalaryInKind = 1;
         public static int GoodFired;
         public static int YesOrNoSalaryChanged;
         public static int YesOrNoSalaryInKind;
@@ -29,7 +26,28 @@ namespace AppLiquidacion
         public static float ValueOldSalary;
         public static float ValuePayInKind = 0;
 
-       
+        public string ValueWithinPoints(string NumberWithPoints)
+        {
+            string ObjectNumber = "";
+            string[] Segments = NumberWithPoints.Split(',');
+            foreach (string i in Segments)
+            {
+                ObjectNumber = ObjectNumber + i;
+            }
+            return ObjectNumber;
+        }
+        public string ValueWithPoints(string Number)
+        {
+            string ObjectNumber = "";
+            string[] Segments = Number.Split(',');
+            foreach (string i in Segments)
+            {
+                ObjectNumber = ObjectNumber + i;
+            }
+
+            var NumberWithPoints = String.Format("{0:#,0}", Convert.ToInt64(ObjectNumber));
+            return NumberWithPoints;
+        }
         public StepOne()
         {
             InitializeComponent();
@@ -222,44 +240,27 @@ namespace AppLiquidacion
 
         private void Salary_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
-            int b = e.PlatformKeyCode;
-                if (e.PlatformKeyCode == 190)
-                {
-                    if (YesOrNoPointInSalary == 2)
-                    {
-                         e.Handled = true;
-                         YesOrNoPointInSalary = 1;
-                    }
-                    YesOrNoPointInSalary = 2;
-                }
+
+            if (e.PlatformKeyCode == 190)
+            {
+                e.Handled = true;
+            }
               
         }
 
         private void OldSalary_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
-
             if (e.PlatformKeyCode == 190)
-            {
-                if (YesOrNoPointInOldSalary == 2)
                 {
                     e.Handled = true;
-                    YesOrNoPointInOldSalary = 1;
                 }
-                YesOrNoPointInOldSalary = 2;
-            }
         }
 
         private void HowManyIsSalaryInKind_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
-
             if (e.PlatformKeyCode == 190)
             {
-                if (YesOrNoPointInSalaryInKind == 2)
-                {
-                    e.Handled = true;
-                    YesOrNoPointInSalaryInKind = 1;
-                }
-                YesOrNoPointInSalaryInKind = 2;
+                e.Handled = true;
             }
         }
 
@@ -272,41 +273,24 @@ namespace AppLiquidacion
         }
         private void HowManyIsSalaryInKind_TextChanged(object sender, TextChangedEventArgs e)
         {
-
-            if (HowManyIsSalaryInKind.Text != "" && !HowManyIsSalaryInKind.Text.Contains("-") && !HowManyIsSalaryInKind.Text.Contains(",") && HowManyIsSalaryInKind.Text.IndexOf(".") != 0)
-             ValuePayInKind = float.Parse(HowManyIsSalaryInKind.Text);
-            if (HowManyIsSalaryInKind.Text.IndexOf(".") == 0 || HowManyIsSalaryInKind.Text.IndexOf("-") == 0 || HowManyIsSalaryInKind.Text.IndexOf(",") == 0)
-                HowManyIsSalaryInKind.Text = "";
-            else
-            {
-                if (HowManyIsSalaryInKind.Text.Contains("-") || HowManyIsSalaryInKind.Text.Contains(","))
-                    HowManyIsSalaryInKind.Text = HowManyIsSalaryInKind.Text.Substring(0, HowManyIsSalaryInKind.Text.IndexOf("-"));
-            }
-
-            if (HowManyIsSalaryInKind.Text.Contains("."))
-                YesOrNoPointInSalaryInKind = 2;
-            else
-                YesOrNoPointInSalaryInKind = 1;
+            
+            if(HowManyIsSalaryInKind.Text.Length > 3)
+            HowManyIsSalaryInKind.Text = ValueWithPoints(HowManyIsSalaryInKind.Text);
+            HowManyIsSalaryInKind.Select(HowManyIsSalaryInKind.Text.Length, 0);
+            if (HowManyIsSalaryInKind.Text != "")
+            ValuePayInKind = Convert.ToInt64(ValueWithinPoints(HowManyIsSalaryInKind.Text));
+            
 
         }
 
         private void OldSalary_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if (OldSalary.Text.Length > 3)
+                OldSalary.Text = ValueWithPoints(OldSalary.Text);
+            OldSalary.Select(OldSalary.Text.Length, 0);
+            if (OldSalary.Text != "")
+                ValueOldSalary = Convert.ToInt64(ValueWithinPoints(OldSalary.Text));
             
-            if (OldSalary.Text != "" && !OldSalary.Text.Contains("-") && !OldSalary.Text.Contains(",") && OldSalary.Text.IndexOf(".") != 0)
-            ValueOldSalary = float.Parse(OldSalary.Text);
-            if (OldSalary.Text.IndexOf(".") == 0 || OldSalary.Text.IndexOf("-") == 0 || OldSalary.Text.IndexOf(",") == 0)
-                OldSalary.Text = "";
-            else
-            {
-                if (OldSalary.Text.Contains("-") || OldSalary.Text.Contains(","))
-                    OldSalary.Text = OldSalary.Text.Substring(0, OldSalary.Text.IndexOf("-"));
-            }
-
-            if (OldSalary.Text.Contains("."))
-                YesOrNoPointInOldSalary = 2;
-            else
-                YesOrNoPointInOldSalary = 1;
         }
 
         private void Resign_Click(object sender, RoutedEventArgs e)
@@ -375,20 +359,11 @@ namespace AppLiquidacion
 
         private void Salary_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (Salary.Text != "" && !Salary.Text.Contains("-") && !Salary.Text.Contains(",") && Salary.Text.IndexOf(".") != 0)
-                ActualSalary = float.Parse(Salary.Text);
-            if (Salary.Text.IndexOf(".") == 0 || Salary.Text.IndexOf("-") == 0 || Salary.Text.IndexOf(",") == 0)
-                Salary.Text= "";
-            else 
-            {
-                if (Salary.Text.Contains("-") || Salary.Text.Contains(","))
-                    Salary.Text = Salary.Text.Substring(0,Salary.Text.IndexOf("-"));
-            }
-            if (Salary.Text.Contains("."))
-                YesOrNoPointInSalary = 2;
-            else
-                YesOrNoPointInSalary = 1;
-      
+            if (Salary.Text.Length > 3)
+                Salary.Text = ValueWithPoints(Salary.Text);
+            Salary.Select(Salary.Text.Length, 0);
+            if (Salary.Text != "")
+                ActualSalary = Convert.ToInt64(ValueWithinPoints(Salary.Text));
         }
 
 

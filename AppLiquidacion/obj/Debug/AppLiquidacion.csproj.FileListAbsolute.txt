@@ -14,3 +14,5 @@ C:\Users\campu_000\Desktop\AppLiquidacion\AppLiquidacion\obj\Debug\AppLiquidacio
 C:\Users\campu_000\Desktop\AppLiquidacion\AppLiquidacion\obj\Debug\XapCacheFile.xml
 C:\Users\campu_000\Desktop\AppLiquidacion\AppLiquidacion\obj\Debug\StepTwo.g.cs
 C:\Users\campu_000\Desktop\AppLiquidacion\AppLiquidacion\obj\Debug\ThirdStep.g.cs
+C:\Users\campu_000\Desktop\AppLiquidacion\AppLiquidacion\obj\Debug\FinalizedPayroll.g.cs
+C:\Users\campu_000\Desktop\AppLiquidacion\AppLiquidacion\obj\Debug\StartPayroll.g.cs

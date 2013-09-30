@@ -1,0 +1,137 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="AppLiquidacion.StartPayroll"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="NominApp" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="Nomina" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+        <ScrollViewer HorizontalAlignment="Left" Height="607" Grid.Row="1" VerticalAlignment="Top" Width="480" Margin="-10,0,0,0">
+            <StackPanel Height="Auto" Width="485">
+                <Grid Height="auto" Margin="12,0,-12,0" Visibility="Visible">
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="¿El salario del trabajador es quincenla o mensual?." VerticalAlignment="Top" Margin="10,0,0,0"/>
+                    <CheckBox x:Name="SalaryMonthly" Content="Mensual." HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" Click="SalaryMonthly_Click"/>
+                    <CheckBox x:Name="SalaryFortnightly" Content="Quincenal." HorizontalAlignment="Left" Margin="163,32,0,0" VerticalAlignment="Top" Click="SalaryFortnightly_Click"/>
+                </Grid>
+                <Grid Height="115" Margin="10,0,-10,0" Visibility="Visible">
+                    <TextBox x:Name="ValueSalary" InputScope="Number" HorizontalAlignment="Right" Margin="0,42,74,1" TextWrapping="Wrap" Width="379" KeyDown="ValueSalary_KeyDown" TextChanged="ValueSalary_TextChanged"/>
+                    <TextBox  HorizontalAlignment="Left" Height="72" Margin="387,0,0,1" TextWrapping="Wrap" Text="COP" VerticalAlignment="Bottom" Width="95" IsReadOnly="True"/>
+                    <TextBox HorizontalAlignment="Left" Height="72" Margin="1,42,0,0" TextWrapping="Wrap" Text="$" VerticalAlignment="Top" Width="55" IsReadOnly="True"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="¿Cuál es el valor del sueldo del empleado?." VerticalAlignment="Top"/>
+                </Grid>
+
+                <Grid x:Name="GridSalaryInKind" Height="107" Margin="10,0,-10,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="333*"/>
+                        <ColumnDefinition Width="152*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="TextSalaryInKind" HorizontalAlignment="Left" Margin="9,5,0,0" TextWrapping="Wrap" Text="¿El empleado tiene algún tipo de salario en especie?." VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                    <CheckBox x:Name="YesSalaryInKind" Content="Sí." HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" Click="YesSalaryInKind_Click"/>
+                    <CheckBox x:Name="NoSalaryInKind" Content="No." HorizontalAlignment="Left" Margin="96,32,0,0" VerticalAlignment="Top" Click="NoSalaryInKind_Click"/>
+                    <Button  x:Name="HelpSalaryInKind" FontSize="18" Content="?" HorizontalAlignment="Left" Margin="71,40,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto" Click="HelpSalaryInKind_Click" Grid.Column="1" />
+                </Grid>
+                <Grid x:Name="GridYesSalaryInKind" Height="120" Visibility="Collapsed" Margin="10,0,-10,0">
+                    <TextBlock x:Name="TextSalaryInKindAgreed" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="¿El salario en especie que tiene el empleado fue pactado con algún valor monetario?." VerticalAlignment="Top"/>
+                    <CheckBox x:Name="YesSalaryInKindAgreed" Content="Sí." HorizontalAlignment="Left" Margin="10,53,0,-25" VerticalAlignment="Top" Click="YesSalaryInKindAgreed_Click" />
+                    <CheckBox x:Name="NoSalaryInKindAgreed" Content="No." HorizontalAlignment="Left" Margin="96,53,0,-25" VerticalAlignment="Top"  Click="NoSalaryInKindAgreed_Click"/>
+                </Grid>
+                <Grid x:Name="GridYesSalaryInKindAgreed" Height="100" Visibility="Collapsed" Margin="10,0,-10,0">
+                    <TextBlock x:Name="TextHowManyIsSalaryInKind" HorizontalAlignment="Left" Margin="16,10,0,0" TextWrapping="Wrap" Text="¿Qué valor tiene ese salario en especie?." VerticalAlignment="Top"/>
+                    <TextBox x:Name="HowManyIsSalaryInKind" HorizontalAlignment="Left" Height="72" Margin="41,32,0,-4" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="374" InputScope="Number" KeyDown="HowManyIsSalaryInKind_KeyDown" TextChanged="HowManyIsSalaryInKind_TextChanged"/>
+                    <TextBox HorizontalAlignment="Right" Height="72" Margin="0,32,-1,-4" TextWrapping="Wrap" Text="COP" VerticalAlignment="Top" Width="95" IsReadOnly="True"/>
+                    <TextBox HorizontalAlignment="Left" Height="72" Margin="10,32,0,-4" TextWrapping="Wrap" Text="$" VerticalAlignment="Top" Width="55" IsReadOnly="True"/>
+                </Grid>
+                <Grid Height="113" Margin="10,0,-10,0">
+                    <TextBlock HorizontalAlignment="Left" Margin="10,10,0,-16" TextWrapping="Wrap" Text="¿Cuántas horas trabaja a la semana el empleado?." VerticalAlignment="Top" Width="465"/>
+                    <TextBox x:Name="HoursWorkedInWeek" InputScope="Number" HorizontalAlignment="Right" Margin="0,43,35,0" TextWrapping="Wrap" Width="440" KeyDown="HoursWorkedInWeek_KeyDown" TextChanged="HoursWorkedInWeek_TextChanged" />
+                </Grid>
+                <Grid Height="Auto" Margin="10,0,-10,0">
+                    <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="¿El empleado trabajó horas extras?." VerticalAlignment="Top"/>
+                    <CheckBox x:Name="YesOvertime" Content="Sí." HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" Click="YesOvertime_Click"/>
+                    <CheckBox x:Name="NoOvertime" Content="No." HorizontalAlignment="Left" Margin="101,32,0,0" VerticalAlignment="Top" Click="NoOvertime_Click"/>
+                </Grid>
+                <Grid x:Name="GridTableOfHours" Margin="10,46,5,0" Height="228" Visibility="Collapsed">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Height="Auto">
+                        <Border  BorderBrush="White" BorderThickness="0.5" Height="76">
+                            <TextBlock Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Margin="2,16,0,0" TextWrapping="Wrap" Text="Horas Extras" FontSize="27" VerticalAlignment="Top"/>
+                        </Border>
+                    </StackPanel>
+                    <StackPanel Grid.Column="0" Grid.Row="1">
+                        <Border  BorderBrush="White" BorderThickness="0.5" Height="76">
+                            <TextBlock Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Margin="6,16,0,0" TextWrapping="Wrap" Text="Dominicales o Festivas" FontSize="18" VerticalAlignment="Top"/>
+                        </Border>
+                    </StackPanel>
+                    <StackPanel Grid.Column="0" Grid.Row="2">
+                        <Border  BorderBrush="White" BorderThickness="0.5" Height="76">
+                            <TextBlock Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Margin="10,22,0,0" TextWrapping="Wrap" Text="Entre semana" FontSize="18" VerticalAlignment="Top"/>
+                        </Border>
+                    </StackPanel>
+                    <StackPanel Grid.Column="2" Grid.Row="0">
+                        <Border  BorderBrush="White" BorderThickness="0.5" Height="76" HorizontalAlignment="Left" Width="156">
+                            <TextBlock Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Margin="28,29,0,0" TextWrapping="Wrap" Text="Nocturnas" FontSize="18" VerticalAlignment="Top"/>
+                        </Border>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Grid.Row="0">
+                        <Border  BorderBrush="White" BorderThickness="0.5" Height="76">
+                            <TextBlock Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Margin="37,27,0,0" TextWrapping="Wrap" Text="Diurnas" FontSize="18" VerticalAlignment="Top"/>
+                        </Border>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Grid.Row="1">
+                        <Border BorderBrush="White" BorderThickness="0.5" Height="76">
+                            <TextBox x:Name="OvertimeSundayInDay" TextWrapping="Wrap" InputScope="Number" Text="" KeyDown="OvertimeSundayInDay_KeyDown" TextChanged="OvertimeSundayInDay_TextChanged"/>
+                        </Border>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Grid.Row="2">
+                        <Border BorderBrush="White" BorderThickness="0.5" Height="76">
+                            <TextBox x:Name="OvertimeWeekInDay" TextWrapping="Wrap" InputScope="Number" Text="" KeyDown="OvertimeWeekInDay_KeyDown" TextChanged="OvertimeWeekInDay_TextChanged"/>
+                        </Border>
+                    </StackPanel>
+                    <StackPanel Grid.Column="2" Grid.Row="2">
+                        <Border BorderBrush="White" BorderThickness="0.5" Height="76">
+                            <TextBox x:Name="OvertimeWeekAtNight" TextWrapping="Wrap" InputScope="Number" Text="" KeyDown="OvertimeWeekAtNight_KeyDown" TextChanged="OvertimeWeekAtNight_TextChanged"/>
+                        </Border>
+                    </StackPanel>
+                    <StackPanel Grid.Column="2" Grid.Row="1">
+                        <Border BorderBrush="White" BorderThickness="0.5" Height="76">
+                            <TextBox x:Name="OvertimeSundayAtNight" TextWrapping="Wrap" InputScope="Number" Text="" KeyDown="OvertimeSundayAtNight_KeyDown" TextChanged="OvertimeSundayAtNight_TextChanged"/>
+                        </Border>
+                    </StackPanel>
+                </Grid>
+                <Button  x:Name="Finalized" Content="Finalizar" Margin="329,0,-4,0" Click="Finalized_Click"/>
+
+            </StackPanel>
+        </ScrollViewer>
+
+        <!--ContentPanel - place additional content here-->
+    </Grid>
+
+</phone:PhoneApplicationPage>

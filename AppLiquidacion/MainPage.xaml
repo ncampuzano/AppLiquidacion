@@ -22,16 +22,17 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock x:Name="ApplicationTitle" Style="{StaticResource PhoneTextNormalStyle}" Text="AppLiquidación" />
-            <TextBlock x:Name="PageTitle" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Text="Liquidación"/>
+            <TextBlock x:Name="ApplicationTitle" Style="{StaticResource PhoneTextNormalStyle}" />
+            <TextBlock x:Name="PageTitle" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Text="NominApp"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="10,0,14,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" Height="Auto">
-            <TextBlock  Text="AppLiquidación es una aplicación que fácilmente le ayudará a liquidar sus empleados, en tan solo tres simples pasos" TextAlignment="Center" FontSize="27" x:Name="Information" HorizontalAlignment="Left" Margin="10,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="436"/>
-            <Button x:Name="Comenzar" Content="Comenzar" HorizontalAlignment="Left" Margin="290,472,0,0" VerticalAlignment="Top" Click="Comenzar_Click"/>
-            <TextBlock HorizontalAlignment="Left" Margin="10,217,0,0" TextWrapping="Wrap" Text="Usted encontrará botones con '¿?' , que le proporcionarán ayuda o una pequeña explicación. " VerticalAlignment="Top"/>
-            <TextBlock  Text="Para los valores numéricos use el punto como indicador de décimales." HorizontalAlignment="Left" Margin="10,275,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="436"/>
+            <TextBlock TextAlignment="Center" FontSize="27" x:Name="Information" HorizontalAlignment="Left" Margin="10,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="436"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,544,0,0" TextWrapping="Wrap" Text="Usted encontrará botones con '?' , que le proporcionarán ayuda o una pequeña explicación. " VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,275,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="436"/>
+            <Button x:Name="Payroll" Content="Nomina" HorizontalAlignment="Left" Margin="160,104,0,0" VerticalAlignment="Top" Click="Payroll_Click"/>
+            <Button x:Name="LiquidationWage" Content="Liquidación Salarial" HorizontalAlignment="Left" Margin="95,222,0,0" VerticalAlignment="Top" Click="LiquidationWage_Click"/>
         </Grid>
     </Grid>
 

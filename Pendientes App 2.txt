@@ -1,0 +1,11 @@
+1) Cambiar Liquidar....
+2) Pagina de Inicio (Pago de nomina y Liquidacion)
+3) Menu
+4) Pago de Nomina
+5) Discriminado
+6) Textos
+7) Diseño
+8) Correo
+9) PDF
+10) Publicarla 
+11) Scroll de fecha.	
