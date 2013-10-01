@@ -302,7 +302,7 @@ namespace AppLiquidacion
                 GridGoodFiredOrNot.Visibility = Visibility.Collapsed;
             }
             else
-                GoodFired = 2;
+                GoodFired = 0;
 
         }
 

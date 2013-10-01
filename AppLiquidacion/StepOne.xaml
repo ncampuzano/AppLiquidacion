@@ -244,7 +244,7 @@
                     <CheckBox x:Name="ThreeMonthChanged" Content="3" HorizontalAlignment="Left" Margin="168,42,0,0" VerticalAlignment="Top" Click="ThreeMonthChanged_Click" KeyDown="ThreeMonthChanged_KeyDown"/>
                 </Grid>
                 <Grid x:Name="GridGoodFired" Height="Auto">
-                    <CheckBox x:Name="Resign" Content="Renunció."  HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top" Click="Resign_Click"/>
+                    <CheckBox x:Name="Resign" Content="Renunció."  HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top" Click="Resign_Click" />
                     <CheckBox x:Name="Fired"  Content="Fue despedido."  HorizontalAlignment="Left" Margin="166,10,0,0" VerticalAlignment="Top" Click="Fired_Click"/>
                 </Grid>
                 <Grid Height="100" x:Name="GridGoodFiredOrNot" Visibility="Collapsed">

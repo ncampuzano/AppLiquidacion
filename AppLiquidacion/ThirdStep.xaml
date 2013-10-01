@@ -36,22 +36,22 @@
 
             </Grid>
             <StackPanel HorizontalAlignment="Left" Height="auto" Margin="10,214,0,0" VerticalAlignment="Top" Width="Auto">
-                <TextBlock x:Name="Salry" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="a" VerticalAlignment="Top"/>           
+                <TextBlock x:Name="Salary" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>           
             </StackPanel>
             <StackPanel HorizontalAlignment="Left" Height="auto" Margin="10,254,0,0" VerticalAlignment="Top" Width="Auto">
-                <TextBlock x:Name="SubsidyTransport" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="a" VerticalAlignment="Top"/>
+                <TextBlock x:Name="SubsidyTransport" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Left" Height="auto" Margin="10,294,0,0" VerticalAlignment="Top" Width="Auto">
-                <TextBlock x:Name="SalaryInKind" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="a" VerticalAlignment="Top"/>
+                <TextBlock x:Name="SalaryInKind" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Left" Height="auto" Margin="10,334,0,0" VerticalAlignment="Top" Width="Auto">
-                <TextBlock x:Name="Severence" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="a" VerticalAlignment="Top"/>
+                <TextBlock x:Name="Severence" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Left" Height="auto" Margin="10,374,0,0" VerticalAlignment="Top" Width="Auto">
-                <TextBlock x:Name="Vacations" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="a" VerticalAlignment="Top"/>
+                <TextBlock x:Name="Vacations" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Left" Height="auto" Margin="10,414,0,0" VerticalAlignment="Top" Width="Auto">
-                <TextBlock x:Name="Compensation" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="a" VerticalAlignment="Top"/>
+                <TextBlock x:Name="Compensation" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
             </StackPanel>
         </Grid>
 
