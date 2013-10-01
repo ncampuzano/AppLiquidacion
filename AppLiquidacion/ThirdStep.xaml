@@ -28,11 +28,33 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <TextBlock  x:Name="TextLiquidate" HorizontalAlignment="Left" Margin="10,160,0,0" TextWrapping="Wrap" Text="La cantidad de liquidación es " VerticalAlignment="Top" FontSize="36" Width="446"/>
-            <TextBox x:Name="ValueLiquidateNumber" HorizontalAlignment="Left" Height="72" Margin="0,256,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="456" IsReadOnly="True"/>
+            <TextBlock  x:Name="TextLiquidate" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="La cantidad de liquidación salarial es:  " VerticalAlignment="Top" FontSize="36" Width="446"/>
+            <TextBox x:Name="ValueLiquidateNumber" HorizontalAlignment="Left" Height="72" Margin="0,96,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="456" IsReadOnly="True"/>
             <TextBlock x:Name="DataOfWorker" HorizontalAlignment="Left" Margin="10,84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="21"/>
+            <Grid HorizontalAlignment="Left" Height="46" Margin="10,168,0,0" VerticalAlignment="Top" Width="446">
+                <TextBlock HorizontalAlignment="Left" Margin="0,10,0,0" TextWrapping="Wrap" Text="Liquidación salarial discriminada" VerticalAlignment="Top"/>
 
+            </Grid>
+            <StackPanel HorizontalAlignment="Left" Height="auto" Margin="10,214,0,0" VerticalAlignment="Top" Width="Auto">
+                <TextBlock x:Name="Salry" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="a" VerticalAlignment="Top"/>           
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" Height="auto" Margin="10,254,0,0" VerticalAlignment="Top" Width="Auto">
+                <TextBlock x:Name="SubsidyTransport" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="a" VerticalAlignment="Top"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" Height="auto" Margin="10,294,0,0" VerticalAlignment="Top" Width="Auto">
+                <TextBlock x:Name="SalaryInKind" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="a" VerticalAlignment="Top"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" Height="auto" Margin="10,334,0,0" VerticalAlignment="Top" Width="Auto">
+                <TextBlock x:Name="Severence" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="a" VerticalAlignment="Top"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" Height="auto" Margin="10,374,0,0" VerticalAlignment="Top" Width="Auto">
+                <TextBlock x:Name="Vacations" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="a" VerticalAlignment="Top"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" Height="auto" Margin="10,414,0,0" VerticalAlignment="Top" Width="Auto">
+                <TextBlock x:Name="Compensation" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="a" VerticalAlignment="Top"/>
+            </StackPanel>
         </Grid>
+
     </Grid>
 
 </phone:PhoneApplicationPage>
