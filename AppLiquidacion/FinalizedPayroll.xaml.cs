@@ -17,8 +17,8 @@ namespace AppLiquidacion
         long ValuePayroll;
         long ValueHourWorked;
         public long HowManyHourWorked(long ValueSalary, int HoursWorked, int FormPay)
-        { 
-            ValueSalary /= (HoursWorked / 7)* FormPay ;
+        {
+            ValueSalary = Convert.ToInt64(ValueSalary / ((double)HoursWorked / 7) * FormPay);
             return ValueSalary;
         }
         public string ValueWithPoints(string Number)
@@ -40,14 +40,19 @@ namespace AppLiquidacion
             ValuePayroll = StartPayroll.ValueSalaryActual + StartPayroll.ValueHowManyIsSalaryInKind;
             
             Salary.Text =  "Sueldo: " + ValueWithPoints(StartPayroll.ValueSalaryActual.ToString());
+            StackSalary.Visibility = Visibility.Visible;
             if (StartPayroll.ValueHowManyIsSalaryInKind != 0)
                 SalaryInKind.Text = "Salario en especie: " + ValueWithPoints(StartPayroll.ValueHowManyIsSalaryInKind.ToString());
+            StackSalaryInKind.Visibility = Visibility.Visible;
+
             if (StartPayroll.MonthlyOrFortnightly == 1)
             {
                 if (StartPayroll.ValueSalaryActual < SMLV * 2)
                 {
                     ValuePayroll += ValueTransportSubsidy;
-                    TransportSubsidy.Text = "Subsidio de Transporte: " + ValueWithPoints(ValueTransportSubsidy.ToString()); 
+                    TransportSubsidy.Text = "Subsidio de Transporte: " + ValueWithPoints(ValueTransportSubsidy.ToString());
+                    StackTransportSubsidy.Visibility = Visibility.Visible;
+
                 }   
                ValueHourWorked = HowManyHourWorked(StartPayroll.ValueSalaryActual, StartPayroll.ValueHoursWorkedInWeek, 30);
             }
@@ -56,7 +61,9 @@ namespace AppLiquidacion
                 if (StartPayroll.ValueSalaryActual < SMLV)
                 {
                     ValuePayroll += ValueTransportSubsidy / 2;
-                    TransportSubsidy.Text = "Subsidio de Transporte: " + ValueWithPoints((ValueTransportSubsidy/2).ToString()); 
+                    TransportSubsidy.Text = "Subsidio de Transporte: " + ValueWithPoints((ValueTransportSubsidy/2).ToString());
+                    StackTransportSubsidy.Visibility = Visibility.Visible;
+
                 }
                 ValueHourWorked = HowManyHourWorked(StartPayroll.ValueSalaryActual, StartPayroll.ValueHoursWorkedInWeek, 15);
             } 
@@ -70,17 +77,21 @@ namespace AppLiquidacion
             }
             long ValueSalaryTemp = ValuePayroll;
             Health.Text ="Salud: "  + ValueWithPoints((Convert.ToInt64(ValuePayroll* 0.04)).ToString());
+            StackHeatlh.Visibility = Visibility.Visible;
             Pension.Text = "Pensiones: " + ValueWithPoints((Convert.ToInt64(ValuePayroll * 0.04)).ToString());
+            StackPension.Visibility = Visibility.Visible;
             ValuePayroll -= Convert.ToInt64((ValuePayroll * 0.08));
 
             if (StartPayroll.MonthlyOrFortnightly == 1 && StartPayroll.ValueSalaryActual > SMLV * 4)
             {
                 Solidarity.Text = "Fondo de solidaridad: " + ValueWithPoints((Convert.ToInt64(ValuePayroll * 0.01)).ToString());
+                StackSolidarity.Visibility = Visibility.Visible;
                 ValuePayroll -= Convert.ToInt64(ValueSalaryTemp * 0.01);
             }
             if (StartPayroll.MonthlyOrFortnightly == 2 && StartPayroll.ValueSalaryActual < SMLV * 2)
             {
                 Solidarity.Text = "Fondo de solidaridad: " + ValueWithPoints((Convert.ToInt64(ValuePayroll * 0.01)).ToString());
+                StackSolidarity.Visibility = Visibility.Visible;
                 ValuePayroll -= Convert.ToInt64(ValueSalaryTemp * 0.01);    
             }
 

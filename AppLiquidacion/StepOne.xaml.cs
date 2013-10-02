@@ -194,7 +194,7 @@ namespace AppLiquidacion
            }
            else
            {
-               GridHumanStupid.Visibility = Visibility.Visible;
+               MessageBox.Show("Hay algún campo sin rellenar o la fecha es invalida por una incoherencia en el teimpo.");
                YesOrNoTwoStep = 0;
            }
 

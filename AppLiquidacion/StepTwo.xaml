@@ -1,5 +1,6 @@
 ﻿<phone:PhoneApplicationPage
     x:Class="AppLiquidacion.StepTwo"
+     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
@@ -12,7 +13,26 @@
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
-
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
@@ -131,7 +151,7 @@
                         <ListBoxItem Content="1974"/>
                         <ListBoxItem Content="1973"/>
                     </ListBox>
-                    <Button x:Name="HelpPayNoSeverence" FontSize="18" Content="¿?" HorizontalAlignment="Left" Margin="404,69,0,0" VerticalAlignment="Top" Click="HelpPayNoSeverence_Click"/>
+                    <Button x:Name="HelpPayNoSeverence" FontSize="18" Content="?" HorizontalAlignment="Left" Margin="404,69,0,0" VerticalAlignment="Top" Click="HelpPayNoSeverence_Click"/>
                     <Button x:Name="Recomendation" Content="Recomendación." HorizontalAlignment="Left" Margin="294,131,0,0" VerticalAlignment="Top" Width="184" Height="70" FontSize="18" Click="Recomendation_Click"/>
                 </Grid>
                 <Grid x:Name="GridRecomendation" Height="Auto" Visibility="Collapsed">
@@ -142,15 +162,12 @@
                     <TextBlock x:Name="TextVacations" HorizontalAlignment="Left" Margin="10,41,0,0" TextWrapping="Wrap" Text="¿Usted debe al empleado días de vacaciones?." VerticalAlignment="Top"/>
                     <CheckBox x:Name="YesOwesVacations" Content="Sí" HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" Click="YesOwesVacations_Click"/>
                     <CheckBox x:Name="NoOwesVacations" Content="No" HorizontalAlignment="Left" Margin="101,68,0,0" VerticalAlignment="Top" Click="NoOwesVacations_Click"/>
-                    <Button x:Name="HelpOwesVacations" FontSize="18" Content="¿?" HorizontalAlignment="Left" Margin="402,78,0,0" VerticalAlignment="Top" Click="HelpOwesVacations_Click"/>
+                    <Button x:Name="HelpOwesVacations" FontSize="18" Content="?" HorizontalAlignment="Left" Margin="402,78,0,0" VerticalAlignment="Top" Click="HelpOwesVacations_Click"/>
                 </Grid>
                 <Grid x:Name="GridOwesVacations" Height="100" Visibility="Collapsed">
                     <TextBlock x:Name="TextOwesVacations" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="¿Cuántos días de vacaciones debe?." VerticalAlignment="Top"/>
                     <TextBox x:Name="DaysOwesVacations" InputScope="Number" HorizontalAlignment="Left" Height="72" Margin="10,37,0,-9" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="456" KeyDown="DaysOwesVacations_KeyDown" TextChanged="DaysOwesVacations_TextChanged"/>
-                </Grid>
-                <Grid x:Name="GridHumanStupid" Height="100" Visibility="Collapsed">
-                    <TextBlock x:Name="TextHumanStupid" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="Hay algún campo sin rellenar o la fecha es invalida por una incoherencia dentro del tiempo" VerticalAlignment="Top"/>
-                </Grid>
+                </Grid>          
                 <Grid Height="123">
                     <Button x:Name="Liquidate" Content="Liquidar" HorizontalAlignment="Left" Margin="324,45,0,0" VerticalAlignment="Top" Width="154" Click="Liquidate_Click"/>
                 </Grid>

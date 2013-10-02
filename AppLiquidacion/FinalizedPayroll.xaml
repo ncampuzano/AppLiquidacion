@@ -1,5 +1,6 @@
 ﻿<phone:PhoneApplicationPage
     x:Class="AppLiquidacion.FinalizedPayroll"
+     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
@@ -24,28 +25,57 @@
             <TextBlock Text="NominApp" Style="{StaticResource PhoneTextNormalStyle}"/>
             <TextBlock Text="Pago" Margin="-2,-7,-11,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
-
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <TextBox x:Name="EndValuePayroll" HorizontalAlignment="Left" Height="72" Margin="-1,81,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="456" IsReadOnly="True"/>
+        <StackPanel x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <TextBlock HorizontalAlignment="Left" Margin="10,37,0,0" TextWrapping="Wrap" Text="Total a pagar" FontSize="36" VerticalAlignment="Top"/>
-            <Grid HorizontalAlignment="Left" Height="444" Margin="0,153,-1,0" VerticalAlignment="Top" Width="457" RenderTransformOrigin="0.532,0.495">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Salario"  FontSize="27" VerticalAlignment="Top"/>
-                <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="10,19,0,0" TextWrapping="Wrap" Text="Descuentos" FontSize="27" VerticalAlignment="Top"/>
-                <TextBlock x:Name="Salary" Grid.Column="0" HorizontalAlignment="Left" Margin="21,75,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
-                <TextBlock x:Name="TransportSubsidy" HorizontalAlignment="Left" Margin="21,133,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
-                <TextBlock x:Name="SalaryInKind" Grid.Column="0" HorizontalAlignment="Left" Margin="21,196,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
-                <TextBlock x:Name="Overtime" Grid.Column="0" HorizontalAlignment="Left" Margin="21,260,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
-                <TextBlock x:Name="Health" Grid.Column="1" HorizontalAlignment="Left" Margin="25,75,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
-                <TextBlock x:Name="Pension" Grid.Column="1" HorizontalAlignment="Left" Margin="25,116,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
-                <TextBlock x:Name="Solidarity" Grid.Column="1" HorizontalAlignment="Left" Margin="25,152,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
-
+            <TextBox x:Name="EndValuePayroll" HorizontalAlignment="Left" Height="77" Margin="-1,15,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="456" IsReadOnly="True"/>
+            <Grid HorizontalAlignment="Left" Height="50" Margin="0,7,-1,0" VerticalAlignment="Top" Width="457" RenderTransformOrigin="0.532,0.495">
+                <TextBlock  HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Salario"  FontSize="27" VerticalAlignment="Top"/>
             </Grid>
-
-        </Grid>
+            <StackPanel x:Name="StackSalary" HorizontalAlignment="Left" Height="auto" Margin="0,10,0,0" VerticalAlignment="Top" Width="424" Visibility="Collapsed">
+                <TextBlock x:Name="Salary"  HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="a" VerticalAlignment="Top"/>
+            </StackPanel>
+            <StackPanel x:Name="StackTransportSubsidy" HorizontalAlignment="Left" Height="auto" Margin="0,10,0,0" VerticalAlignment="Top" Width="424" Visibility="Collapsed">
+                <TextBlock x:Name="TransportSubsidy" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="a" VerticalAlignment="Top"/>
+            </StackPanel>
+            <StackPanel  x:Name="StackSalaryInKind"  HorizontalAlignment="Left" Height="auto" Margin="0,10,0,0" VerticalAlignment="Top" Width="424" Visibility="Collapsed">
+                <TextBlock x:Name="SalaryInKind" Grid.Column="0" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="a" VerticalAlignment="Top"/>
+            </StackPanel>
+            <StackPanel x:Name="StackOvertime"  HorizontalAlignment="Left" Height="auto" Margin="0,10,0,0" VerticalAlignment="Top" Width="424" Visibility="Collapsed">
+                <TextBlock x:Name="Overtime"  HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="a" VerticalAlignment="Top"/>
+            </StackPanel>
+            <StackPanel   HorizontalAlignment="Left" Height="auto" Margin="10,5,0,0" VerticalAlignment="Top" Width="424">
+                <TextBlock  HorizontalAlignment="Left" Margin="0,0,0,-0" TextWrapping="Wrap" Text="Descuentos" FontSize="27" VerticalAlignment="Top"/>
+            </StackPanel>
+            <StackPanel x:Name="StackHeatlh"  HorizontalAlignment="Left" Height="auto" Margin="0,10,0,0" VerticalAlignment="Top" Width="424" Visibility="Collapsed">
+                <TextBlock x:Name="Health" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="a" VerticalAlignment="Top"/>
+            </StackPanel>
+            <StackPanel x:Name="StackPension"  HorizontalAlignment="Left" Height="auto" Margin="0,10,0,0" VerticalAlignment="Top" Width="424" Visibility="Collapsed">
+                <TextBlock x:Name="Pension" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="a" VerticalAlignment="Top"/>
+            </StackPanel>
+            <StackPanel x:Name="StackSolidarity"  HorizontalAlignment="Left" Height="auto" Margin="0,10,0,0" VerticalAlignment="Top" Width="424" Visibility="Collapsed">
+                <TextBlock x:Name="Solidarity" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="a" VerticalAlignment="Top"/>
+            </StackPanel>
+        </StackPanel>
+        <toolkit:TransitionService.NavigationInTransition>
+            <toolkit:NavigationInTransition>
+                <toolkit:NavigationInTransition.Backward>
+                    <toolkit:TurnstileTransition Mode="BackwardIn"/>
+                </toolkit:NavigationInTransition.Backward>
+                <toolkit:NavigationInTransition.Forward>
+                    <toolkit:TurnstileTransition Mode="ForwardIn"/>
+                </toolkit:NavigationInTransition.Forward>
+            </toolkit:NavigationInTransition>
+        </toolkit:TransitionService.NavigationInTransition>
+        <toolkit:TransitionService.NavigationOutTransition>
+            <toolkit:NavigationOutTransition>
+                <toolkit:NavigationOutTransition.Backward>
+                    <toolkit:TurnstileTransition Mode="BackwardOut"/>
+                </toolkit:NavigationOutTransition.Backward>
+                <toolkit:NavigationOutTransition.Forward>
+                    <toolkit:TurnstileTransition Mode="ForwardOut"/>
+                </toolkit:NavigationOutTransition.Forward>
+            </toolkit:NavigationOutTransition>
+        </toolkit:TransitionService.NavigationOutTransition>
     </Grid>
 </phone:PhoneApplicationPage>

@@ -104,14 +104,22 @@ namespace AppLiquidacion
             }
             ValueLiquidate = AverageSalary;
             Salary.Text = "Sueldo promedio: " + StepOne.ActualSalary.ToString();
+            StackSalary.Visibility = Visibility.Visible;
             if (AverageSalary < (SLMV * 2))
-                SubsidyTransport.Text = "Subsidio de transporte: 705000";
+            {
+                SubsidyTransport.Text = "Subsidio de transporte: 70,5000";
+                StackSubsidyTransport.Visibility = Visibility.Visible;
+            }
             if (StepOne.YesOrNoSalaryInKindAgreed == 1)
+            {
                 SalaryInKind.Text = "Salario en especie: " + StepOne.ValuePayInKind;
+                StackSalaryInKind.Visibility = Visibility.Visible;
+            }
             if (StepTwo.YesOrNoOwesVacations == 1)
                 {
                     ValueLiquidate += (StepTwo.NumberDaysOwesVacations * (StepOne.ActualSalary / 2) * 12) / 360;
                    Vacations.Text = "Vacaciones: " + ((StepTwo.NumberDaysOwesVacations * (StepOne.ActualSalary / 2) * 12) / 360).ToString();
+                   StackVacations.Visibility = Visibility.Visible;    
                 }
             if (StepTwo.YesOrNoPaySevenceAtTheTime == 2)
             {
@@ -119,6 +127,7 @@ namespace AppLiquidacion
                 int ValueSevecence = Convert.ToInt32(((StepOne.DayEndWork - StepTwo.DayNoPaySeverence).TotalDays * AverageSalary) / 360); 
                 ValueLiquidate += (ValueSevecence * (StepOne.DayEndWork - StepTwo.DayNoPaySeverence).TotalDays * 0.12)/360;
                 Severence.Text = "Cesantiase e intereses de cesantias: " + (((ValueSevecence * (StepOne.DayEndWork - StepTwo.DayNoPaySeverence).TotalDays * 0.12) / 360) + (((StepOne.DayEndWork - StepTwo.DayNoPaySeverence).TotalDays * AverageSalary) / 360));
+                StackSeverence.Visibility = Visibility.Visible;
             }
             else {
 
@@ -180,7 +189,8 @@ namespace AppLiquidacion
                             }
                         }
                     }
-                    Compensation.Text = "Indemnización: " + (Convert.ToInt32(ValueCompesation)).ToString();
+                    Compensation.Text = "Indemnización: " + (Convert.ToInt32(ValueCompesation)).ToString();}
+                    StackCompensation.Visibility = Visibility.Visible;
                 }
                 else
                 {
@@ -188,17 +198,18 @@ namespace AppLiquidacion
                     {
                         ValueLiquidate += StepOne.ActualSalary *(((StepOne.DayEndWork - StepOne.DayStartWork).TotalDays * 0.3) / 360);
                         Compensation.Text = "Indemnización: " + (Convert.ToInt32(StepOne.ActualSalary * (((StepOne.DayEndWork - StepOne.DayStartWork).TotalDays * 0.3) / 360))).ToString();
+                        StackCompensation.Visibility = Visibility.Visible;
                     }
                     else
                     {
                         ValueLiquidate += StepOne.ActualSalary * (((StepOne.DayEndWork - StepOne.DayStartWork).TotalDays * 0.2) / 360);
                         Compensation.Text = "Indemnización: " + (Convert.ToInt32(StepOne.ActualSalary * (((StepOne.DayEndWork - StepOne.DayStartWork).TotalDays * 0.2) / 360))).ToString();
+                        StackCompensation.Visibility = Visibility.Visible;
                     }
                 }
-            }
-           ValueLiquidateNumber.Text = Convert.ToInt32(ValueLiquidate).ToString();
-
-        }
-      }
- }
+                ValueLiquidateNumber.Text = Convert.ToInt32(ValueLiquidate).ToString();
+        }  
+    }
+}
+    
     

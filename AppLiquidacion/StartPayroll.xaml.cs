@@ -189,6 +189,11 @@ namespace AppLiquidacion
                 NavigationService.Navigate(new Uri("/FinalizedPayroll.xaml", UriKind.Relative));
                 YesOrNoFinalized = 0;
             }
+            else
+            {
+                MessageBox.Show("Hay algún campo sin rellenar o la fecha es invalida por una incoherencia en el teimpo.");
+                YesOrNoFinalized = 0;
+            }
         }
 
 

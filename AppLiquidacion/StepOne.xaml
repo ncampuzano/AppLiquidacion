@@ -1,5 +1,6 @@
 ﻿<phone:PhoneApplicationPage
     x:Class="AppLiquidacion.StepOne"
+     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
@@ -12,7 +13,26 @@
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
-
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
@@ -62,7 +82,7 @@
                         <ListBoxItem Content="30"/>
                         <ListBoxItem Content="31"/>
                     </ListBox>
-                    <ListBox x:Name="StartMonths" HorizontalAlignment="Left" Height="78" Margin="90,42,0,0" VerticalAlignment="Top" Width="100">
+                    <ListBox x:Name="StartMonths" HorizontalAlignment="Left" Height="83" Margin="90,42,0,0" VerticalAlignment="Top" Width="100">
                         <ListBoxItem Content="Enero"/>
                         <ListBoxItem Content="Febrero"/>
                         <ListBoxItem Content="Marzo"/>
@@ -231,7 +251,7 @@
                     <TextBlock x:Name="TextChangeSalary" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="¿El sueldo del trabajador cambió en los últimos tres meses?." VerticalAlignment="Top" Width="470"/>
                     <CheckBox x:Name="YesChangedSalary" Content="Sí" HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" Click="YesChangedSalary_Click"/>
                     <CheckBox x:Name="NoChangedSalary" Content="No" HorizontalAlignment="Left" Margin="96,68,0,0" VerticalAlignment="Top" Click="NoChangedSalary_Click"/>
-                    <Button x:Name="HelpChangedSalary" FontSize="18" Content="¿?" HorizontalAlignment="Left" Margin="404,76,0,0" VerticalAlignment="Top" Click="HelpChangedSalary_Click" />
+                    <Button x:Name="HelpChangedSalary" FontSize="18" Content="?" HorizontalAlignment="Left" Margin="404,76,0,0" VerticalAlignment="Top" Click="HelpChangedSalary_Click" />
                 </Grid>
                 <Grid x:Name="GridChangedSalary" Height="Auto" Visibility="Collapsed">
                     <TextBlock x:Name="TextTimeOfChange" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="¿Hace cuántos meses cambió el sueldo?." VerticalAlignment="Top"/>
@@ -244,21 +264,21 @@
                     <CheckBox x:Name="ThreeMonthChanged" Content="3" HorizontalAlignment="Left" Margin="168,42,0,0" VerticalAlignment="Top" Click="ThreeMonthChanged_Click" KeyDown="ThreeMonthChanged_KeyDown"/>
                 </Grid>
                 <Grid x:Name="GridGoodFired" Height="Auto">
-                    <CheckBox x:Name="Resign" Content="Renunció."  HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top" Click="Resign_Click" />
+                    <CheckBox x:Name="Resign" Content="Renunció."  HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="Resign_Click" />
                     <CheckBox x:Name="Fired"  Content="Fue despedido."  HorizontalAlignment="Left" Margin="166,10,0,0" VerticalAlignment="Top" Click="Fired_Click"/>
                 </Grid>
                 <Grid Height="100" x:Name="GridGoodFiredOrNot" Visibility="Collapsed">
                     <TextBlock x:Name="TextFiredNoJust" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="¿El despido fue hecho con causa justa?." VerticalAlignment="Top"/>
                     <CheckBox x:Name="YesFiredJust" Content="Sí." HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" Click="YesFiredJust_Click"/>
                     <CheckBox x:Name="NoFiredJust" Content="No." HorizontalAlignment="Left" Margin="101,27,0,0" VerticalAlignment="Top" Click="NoFiredJust_Click"/>
-                    <Button x:Name="HelpFired" FontSize="18" Content="¿?" HorizontalAlignment="Left" Margin="404,35,0,0" VerticalAlignment="Top" Click="HelpFired_Click"/>
+                    <Button x:Name="HelpFired" FontSize="18" Content="?" HorizontalAlignment="Left" Margin="404,35,0,0" VerticalAlignment="Top" Click="HelpFired_Click"/>
 
                 </Grid>
                 <Grid x:Name="GridSalaryInKind" Height="107">
                     <TextBlock x:Name="TextSalaryInKind" HorizontalAlignment="Left" Margin="9,5,0,0" TextWrapping="Wrap" Text="¿El empleado tiene algún tipo de salario en especie?." VerticalAlignment="Top"/>
                     <CheckBox x:Name="YesSalaryInKind" Content="Sí." HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" Click="YesSalaryInKind_Click"/>
                     <CheckBox x:Name="NoSalaryInKind" Content="No." HorizontalAlignment="Left" Margin="96,32,0,0" VerticalAlignment="Top" Click="NoSalaryInKind_Click"/>
-                    <Button x:Name="HelpSalaryInKind" FontSize="18" Content="¿?" HorizontalAlignment="Left" Margin="404,40,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto" Click="HelpSalaryInKind_Click"/>
+                    <Button x:Name="HelpSalaryInKind" FontSize="18" Content="?" HorizontalAlignment="Left" Margin="404,40,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto" Click="HelpSalaryInKind_Click"/>
                 </Grid>
                 <Grid x:Name="GridYesSalaryInKind" Height="Auto" Visibility="Collapsed">
                     <TextBlock x:Name="TextSalaryInKindAgreed" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="¿El salario en especie que tiene el empleado fue pactado con algún valor monetario?." VerticalAlignment="Top"/>
@@ -270,9 +290,6 @@
                     <TextBox x:Name="HowManyIsSalaryInKind" HorizontalAlignment="Left" Height="72" Margin="30,37,0,-9" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="370" InputScope="Number" KeyDown="HowManyIsSalaryInKind_KeyDown" TextChanged="HowManyIsSalaryInKind_TextChanged"/>
                     <TextBox HorizontalAlignment="Right" Height="72" Margin="0,37,9,-9" TextWrapping="Wrap" Text="COP" VerticalAlignment="Top" Width="95" IsReadOnly="True"/>
                     <TextBox HorizontalAlignment="Left" Height="72" Margin="-1,37,0,-9" TextWrapping="Wrap" Text="$" VerticalAlignment="Top" Width="55" IsReadOnly="True"/>
-                </Grid>
-                <Grid x:Name="GridHumanStupid" Height="100" Visibility="Collapsed">
-                    <TextBlock x:Name="TextHumanStupid"  Text="Hay algún campo sin rellenar o la fheca es invalida por una incoherencia en el teimpo." HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
                 </Grid>
                 <Grid x:Name="GridStepTwo" Height="100">
                     <Button x:Name="StepTwo" Content="Siguiente" HorizontalAlignment="Left" Margin="305,10,0,0" VerticalAlignment="Top" Width="170" Click="StepTwo_Click"/>
