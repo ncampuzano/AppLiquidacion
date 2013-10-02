@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using System.Windows.Media;
 
 namespace AppLiquidacion
 {
@@ -60,11 +61,14 @@ namespace AppLiquidacion
                 NoChangedSalary.IsChecked = false;
                 GridChangedSalary.Visibility = Visibility.Visible;
                 YesOrNoSalaryChanged = 1;
+                YesChangedSalary.Foreground = new SolidColorBrush(Colors.Red);
+                NoChangedSalary.Foreground = new SolidColorBrush(Colors.White);
             }
             else
             {
                 GridChangedSalary.Visibility = Visibility.Collapsed;
                 YesOrNoSalaryChanged = 0;
+                YesChangedSalary.Foreground = new SolidColorBrush(Colors.White);
             }
         }
 
@@ -75,10 +79,15 @@ namespace AppLiquidacion
                 YesChangedSalary.IsChecked = false;
                 GridChangedSalary.Visibility = Visibility.Collapsed;
                 YesOrNoSalaryChanged = 2;
+                NoChangedSalary.Foreground = new SolidColorBrush(Colors.Red);
+                YesChangedSalary.Foreground = new SolidColorBrush(Colors.White);
             }
             else
+            {
                 YesOrNoSalaryChanged = 0;
-        }       
+                NoChangedSalary.Foreground = new SolidColorBrush(Colors.White);
+            }
+        }
         private void YesSalaryInKind_Click(object sender, RoutedEventArgs e)
         {
             if (YesSalaryInKind.IsChecked == true)
@@ -86,11 +95,14 @@ namespace AppLiquidacion
                 GridYesSalaryInKind.Visibility = Visibility.Visible;
                 YesOrNoSalaryInKind = 1;
                 NoSalaryInKind.IsChecked = false;
+                YesSalaryInKind.Foreground = new SolidColorBrush(Colors.Red);
+                NoSalaryInKind.Foreground = new SolidColorBrush(Colors.White);
             }
             else
             {
                 GridYesSalaryInKind.Visibility = Visibility.Collapsed;
                 YesOrNoSalaryInKind = 0;
+                YesSalaryInKind.Foreground = new SolidColorBrush(Colors.White);
             }
                 
         }
@@ -103,9 +115,14 @@ namespace AppLiquidacion
                 YesOrNoSalaryInKind = 2;
                 YesSalaryInKind.IsChecked = false;
                 GridYesSalaryInKindAgreed.Visibility = Visibility.Collapsed;
+                NoSalaryInKind.Foreground = new SolidColorBrush(Colors.Red);
+                YesSalaryInKind.Foreground = new SolidColorBrush(Colors.White);
             }
             else
+            {
                 YesOrNoSalaryInKind = 0;
+                NoSalaryInKind.Foreground = new SolidColorBrush(Colors.White);
+            }
         }
 
         private void YesSalaryInKindAgreed_Click(object sender, RoutedEventArgs e)
@@ -115,10 +132,13 @@ namespace AppLiquidacion
                 GridYesSalaryInKindAgreed.Visibility = Visibility.Visible;
                 YesOrNoSalaryInKindAgreed = 1;
                 NoSalaryInKindAgreed.IsChecked = false;
+                YesSalaryInKindAgreed.Foreground = new SolidColorBrush(Colors.Red);
+                NoSalaryInKindAgreed.Foreground = new SolidColorBrush(Colors.White);
             }
             else
             {
                 GridYesSalaryInKindAgreed.Visibility = Visibility.Collapsed;
+                YesSalaryInKindAgreed.Foreground = new SolidColorBrush(Colors.White);
                 YesOrNoSalaryInKindAgreed = 0;
             }
         }
@@ -130,9 +150,14 @@ namespace AppLiquidacion
                 GridYesSalaryInKindAgreed.Visibility = Visibility.Collapsed;
                 YesOrNoSalaryInKindAgreed = 2;
                 YesSalaryInKindAgreed.IsChecked = false;
+                NoSalaryInKindAgreed.Foreground = new SolidColorBrush(Colors.Red);
+                YesSalaryInKindAgreed.Foreground = new SolidColorBrush(Colors.White);
             }
             else
-                YesOrNoSalaryInKindAgreed = 0;     
+            {
+                YesOrNoSalaryInKindAgreed = 0;
+                NoSalaryInKindAgreed.Foreground = new SolidColorBrush(Colors.White);
+            }
         }
 
         private void StepTwo_Click(object sender, RoutedEventArgs e)
@@ -209,9 +234,15 @@ namespace AppLiquidacion
                 TwoMonthChanged.IsChecked = false;
                 ThreeMonthChanged.IsChecked = false;
                 MonthsChangedSalary = 1;
+                OneMonthChanged.Foreground = new SolidColorBrush(Colors.Red);
+                TwoMonthChanged.Foreground = new SolidColorBrush(Colors.White);
+                ThreeMonthChanged.Foreground = new SolidColorBrush(Colors.White);
             }
             else
+            {
                 MonthsChangedSalary = 0;
+                OneMonthChanged.Foreground = new SolidColorBrush(Colors.White);
+            }
         }
 
         private void TwoMonthChanged_Click(object sender, RoutedEventArgs e)
@@ -221,9 +252,15 @@ namespace AppLiquidacion
                 OneMonthChanged.IsChecked = false;
                 ThreeMonthChanged.IsChecked = false;
                 MonthsChangedSalary = 2;
+                TwoMonthChanged.Foreground = new SolidColorBrush(Colors.Red);
+                OneMonthChanged.Foreground = new SolidColorBrush(Colors.White);
+                ThreeMonthChanged.Foreground = new SolidColorBrush(Colors.White);
             }
             else
+            {
                 MonthsChangedSalary = 0;
+                TwoMonthChanged.Foreground = new SolidColorBrush(Colors.White);
+            }
         }
 
         private void ThreeMonthChanged_Click(object sender, RoutedEventArgs e)
@@ -233,9 +270,15 @@ namespace AppLiquidacion
                 OneMonthChanged.IsChecked = false;
                 TwoMonthChanged.IsChecked = false;
                 MonthsChangedSalary = 3;
+                ThreeMonthChanged.Foreground = new SolidColorBrush(Colors.Red);
+                OneMonthChanged.Foreground = new SolidColorBrush(Colors.White);
+                TwoMonthChanged.Foreground = new SolidColorBrush(Colors.White);
             }
             else
+            {
                 MonthsChangedSalary = 0;
+                ThreeMonthChanged.Foreground = new SolidColorBrush(Colors.White);
+            }
         }
 
         private void Salary_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
@@ -300,9 +343,14 @@ namespace AppLiquidacion
                 Fired.IsChecked = false;
                 GoodFired = 1;
                 GridGoodFiredOrNot.Visibility = Visibility.Collapsed;
+                Resign.Foreground = new SolidColorBrush(Colors.Red);
+                Fired.Foreground = new SolidColorBrush(Colors.White);
             }
             else
+            {
                 GoodFired = 0;
+                Resign.Foreground = new SolidColorBrush(Colors.White);
+            }
 
         }
 
@@ -312,11 +360,15 @@ namespace AppLiquidacion
             {
                 Resign.IsChecked = false;
                 GridGoodFiredOrNot.Visibility = Visibility.Visible;
+                Fired.Foreground = new SolidColorBrush(Colors.Red);
+                Resign.Foreground = new SolidColorBrush(Colors.White);
+
             }
             else
             {
                 GoodFired = 0;
                 GridGoodFiredOrNot.Visibility = Visibility.Collapsed;
+                Fired.Foreground = new SolidColorBrush(Colors.White); 
             }
         }
 
@@ -325,10 +377,15 @@ namespace AppLiquidacion
             if (YesFiredJust.IsChecked == true)
             {
                 NoFiredJust.IsChecked = false;
+                YesFiredJust.Foreground = new SolidColorBrush(Colors.Red);
+                NoFiredJust.Foreground = new SolidColorBrush(Colors.White);
                 GoodFired = 1;
             }
             else
+            {
                 GoodFired = 0;
+                YesFiredJust.Foreground = new SolidColorBrush(Colors.White);
+            }
         }
 
         private void NoFiredJust_Click(object sender, RoutedEventArgs e)
@@ -337,9 +394,14 @@ namespace AppLiquidacion
             {
                 YesFiredJust.IsChecked = false;
                 GoodFired = 2;
+                NoFiredJust.Foreground = new SolidColorBrush(Colors.Red);
+                YesFiredJust.Foreground = new SolidColorBrush(Colors.White);
             }
             else
+            {
                 GoodFired = 0;
+                NoFiredJust.Foreground = new SolidColorBrush(Colors.White);
+            }
         }
 
         private void HelpSalaryInKind_Click(object sender, RoutedEventArgs e)

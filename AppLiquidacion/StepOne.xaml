@@ -41,10 +41,11 @@
         </Grid.RowDefinitions>
 
         <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+        <Grid Grid.Row="0" Margin="12,17,0,28">
             <TextBlock x:Name="AppName" Style="{StaticResource PhoneTextNormalStyle}" Text="AppLiquidación."/>
-            <TextBlock x:Name="Step1" Text="Paso 1" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-        </StackPanel>
+            <TextBlock x:Name="Step1" Text="Paso 1" Margin="9,16,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <Image Stretch="Uniform" Visibility="Visible" Source="/Colombia.png" Height="83" Margin="365,21,0,0" RenderTransformOrigin="0.469,0.386"/>
+        </Grid>
         <ScrollViewer HorizontalAlignment="Left" Height="597" Margin="0,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="480" RenderTransformOrigin="0.501,0.515">
             <StackPanel  HorizontalAlignment="Left" Height="Auto" Grid.Row="1" VerticalAlignment="Top" Width="480">
 
@@ -264,7 +265,7 @@
                     <CheckBox x:Name="ThreeMonthChanged" Content="3" HorizontalAlignment="Left" Margin="168,42,0,0" VerticalAlignment="Top" Click="ThreeMonthChanged_Click" KeyDown="ThreeMonthChanged_KeyDown"/>
                 </Grid>
                 <Grid x:Name="GridGoodFired" Height="Auto">
-                    <CheckBox x:Name="Resign" Content="Renunció."  HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="Resign_Click" />
+                    <CheckBox x:Name="Resign" Content="Renunció."  HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="Resign_Click"  />
                     <CheckBox x:Name="Fired"  Content="Fue despedido."  HorizontalAlignment="Left" Margin="166,10,0,0" VerticalAlignment="Top" Click="Fired_Click"/>
                 </Grid>
                 <Grid Height="100" x:Name="GridGoodFiredOrNot" Visibility="Collapsed">

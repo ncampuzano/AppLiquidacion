@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using System.Windows.Media;
 
 namespace AppLiquidacion
 {
@@ -58,9 +59,14 @@ namespace AppLiquidacion
             {
                 SalaryFortnightly.IsChecked = false;
                 MonthlyOrFortnightly = 1;
+                SalaryMonthly.Foreground = new SolidColorBrush(Colors.Red);
+                SalaryFortnightly.Foreground = new SolidColorBrush(Colors.White);
             }
             else
+            {
                 MonthlyOrFortnightly = 0;
+                SalaryMonthly.Foreground = new SolidColorBrush(Colors.White);
+            }
         }   
 
         private void SalaryFortnightly_Click(object sender, RoutedEventArgs e)
@@ -69,9 +75,14 @@ namespace AppLiquidacion
             {
                 SalaryMonthly.IsChecked = false;
                 MonthlyOrFortnightly = 2;
+                SalaryFortnightly.Foreground = new SolidColorBrush(Colors.Red);
+                SalaryMonthly.Foreground = new SolidColorBrush(Colors.White);
             }
             else
+            {
                 MonthlyOrFortnightly = 0;
+                SalaryFortnightly.Foreground = new SolidColorBrush(Colors.White);
+            }
         }
         private void YesSalaryInKindAgreed_Click(object sender, RoutedEventArgs e)
         {
@@ -80,11 +91,14 @@ namespace AppLiquidacion
                 GridYesSalaryInKindAgreed.Visibility = Visibility.Visible;
                 YesOrNoSalaryInKindAgreed = 1;
                 NoSalaryInKindAgreed.IsChecked = false;
+                YesSalaryInKindAgreed.Foreground = new SolidColorBrush(Colors.Red);
+                NoSalaryInKindAgreed.Foreground = new SolidColorBrush(Colors.White);
             }
             else
             {
                 GridYesSalaryInKindAgreed.Visibility = Visibility.Collapsed;
                 YesOrNoSalaryInKindAgreed = 0;
+                YesSalaryInKindAgreed.Foreground = new SolidColorBrush(Colors.White);
             }
         }
 
@@ -95,9 +109,14 @@ namespace AppLiquidacion
                 GridYesSalaryInKindAgreed.Visibility = Visibility.Collapsed;
                 YesOrNoSalaryInKindAgreed = 2;
                 YesSalaryInKindAgreed.IsChecked = false;
+                NoSalaryInKindAgreed.Foreground = new SolidColorBrush(Colors.Red);
+                YesSalaryInKindAgreed.Foreground = new SolidColorBrush(Colors.White);
             }
             else
+            {
                 YesOrNoSalaryInKindAgreed = 0;
+                NoSalaryInKindAgreed.Foreground = new SolidColorBrush(Colors.White);
+            }
         }
         private void YesSalaryInKind_Click(object sender, RoutedEventArgs e)
         {
@@ -106,11 +125,14 @@ namespace AppLiquidacion
                 GridYesSalaryInKind.Visibility = Visibility.Visible;
                 YesOrNoSalaryInKind = 1;
                 NoSalaryInKind.IsChecked = false;
+                YesSalaryInKind.Foreground = new SolidColorBrush(Colors.Red);
+                NoSalaryInKind.Foreground = new SolidColorBrush(Colors.White);
             }
             else
             {
                 GridYesSalaryInKind.Visibility = Visibility.Collapsed;
                 YesOrNoSalaryInKind = 0;
+                YesSalaryInKind.Foreground = new SolidColorBrush(Colors.White);
             }
 
         }
@@ -123,9 +145,15 @@ namespace AppLiquidacion
                 YesOrNoSalaryInKind = 2;
                 YesSalaryInKind.IsChecked = false;
                 GridYesSalaryInKindAgreed.Visibility = Visibility.Collapsed;
+                NoSalaryInKind.Foreground = new SolidColorBrush(Colors.Red);
+                YesSalaryInKind.Foreground = new SolidColorBrush(Colors.White);
             }
             else
+            {
                 YesOrNoSalaryInKind = 0;
+                NoSalaryInKind.Foreground = new SolidColorBrush(Colors.White);
+            }
+
         }
 
         private void YesOvertime_Click(object sender, RoutedEventArgs e)
@@ -135,11 +163,14 @@ namespace AppLiquidacion
                 NoOvertime.IsChecked = false;
                 YesOrNoOvertime = 1;
                 GridTableOfHours.Visibility = Visibility.Visible;
+                YesOvertime.Foreground = new SolidColorBrush(Colors.Red);
+                NoOvertime.Foreground = new SolidColorBrush(Colors.White);
             }
             else
             {
                 YesOrNoOvertime = 0;
                 GridTableOfHours.Visibility = Visibility.Collapsed;
+                YesOvertime.Foreground = new SolidColorBrush(Colors.White);
             }
         }
 
@@ -150,9 +181,14 @@ namespace AppLiquidacion
                 YesOrNoOvertime = 2;
                 YesOvertime.IsChecked = false;
                 GridTableOfHours.Visibility = Visibility.Collapsed;
+                NoOvertime.Foreground = new SolidColorBrush(Colors.Red);
+                YesOvertime.Foreground = new SolidColorBrush(Colors.White);
             }
             else
+            {
                 YesOrNoOvertime = 0;
+                NoOvertime.Foreground = new SolidColorBrush(Colors.White);
+            }
 
         }
 

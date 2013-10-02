@@ -41,10 +41,11 @@
         </Grid.RowDefinitions>
 
         <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+        <Grid x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
             <TextBlock x:Name="ApplicationTitle" Text="NominApp" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock x:Name="PageTitle" Text="Nomina" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-        </StackPanel>
+            <TextBlock x:Name="PageTitle" Text="Nomina" Margin="9,9,0,-16" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <Image Stretch="Uniform" Visibility="Visible" Source="/Colombia.png" Height="83" Margin="365,21,0,0" RenderTransformOrigin="0.469,0.386"/>
+        </Grid>
         <ScrollViewer HorizontalAlignment="Left" Height="607" Grid.Row="1" VerticalAlignment="Top" Width="480" Margin="-10,0,0,0">
             <StackPanel Height="Auto" Width="485">
                 <Grid Height="auto" Margin="12,0,-12,0" Visibility="Visible">

@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using System.Windows.Media;
 
 namespace AppLiquidacion
 {
@@ -31,6 +32,13 @@ namespace AppLiquidacion
                 GridRecomendation.Visibility = Visibility.Collapsed;
                 NoPaySeverence.IsChecked = false;
                 YesOrNoPaySevenceAtTheTime = 1;
+                YesPaySeverence.Foreground = new SolidColorBrush(Colors.Red);
+                NoPaySeverence.Foreground = new SolidColorBrush(Colors.White);
+            }
+            else
+            {
+                YesOrNoPaySevenceAtTheTime = 0;
+                YesPaySeverence.Foreground = new SolidColorBrush(Colors.White);
             }
         }
 
@@ -41,11 +49,14 @@ namespace AppLiquidacion
                 GridNoPaySeverence.Visibility = Visibility.Visible;
                 YesPaySeverence.IsChecked = false;
                 YesOrNoPaySevenceAtTheTime = 2;
+                NoPaySeverence.Foreground = new SolidColorBrush(Colors.Red);
+                YesPaySeverence.Foreground = new SolidColorBrush(Colors.White);
             }
             else
             {  
                     YesOrNoPaySevenceAtTheTime = 0;
                 GridNoPaySeverence.Visibility = Visibility.Collapsed;
+                NoPaySeverence.Foreground = new SolidColorBrush(Colors.White);
             }
 
         }
@@ -69,11 +80,14 @@ namespace AppLiquidacion
                 NoOwesVacations.IsChecked = false;
                 GridOwesVacations.Visibility = Visibility.Visible;
                 YesOrNoOwesVacations = 1;
+                YesOwesVacations.Foreground = new SolidColorBrush(Colors.Red);
+                NoOwesVacations.Foreground = new SolidColorBrush(Colors.White);
             }
             else
             {
                 YesOrNoOwesVacations = 0;
                 GridOwesVacations.Visibility = Visibility.Collapsed;
+                YesOwesVacations.Foreground = new SolidColorBrush(Colors.White);
             }
         }
 
@@ -84,9 +98,14 @@ namespace AppLiquidacion
                 YesOrNoOwesVacations = 2;
                 GridOwesVacations.Visibility = Visibility.Collapsed;
                 YesOwesVacations.IsChecked = false;
+                NoOwesVacations.Foreground = new SolidColorBrush(Colors.Red);
+                YesOwesVacations.Foreground = new SolidColorBrush(Colors.White);
             }
             else
+            {
                 YesOrNoOwesVacations = 0;
+                NoOwesVacations.Foreground = new SolidColorBrush(Colors.White);
+            }
         }
 
         private void Liquidate_Click(object sender, RoutedEventArgs e)

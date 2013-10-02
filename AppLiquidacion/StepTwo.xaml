@@ -41,10 +41,12 @@
         </Grid.RowDefinitions>
 
         <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+        <Grid Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Text="AppLiquidación." Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="Paso 2" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-        </StackPanel>
+            <TextBlock Text="Paso 2" Margin="9,16,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <Image Stretch="Uniform" Visibility="Visible" Source="/Colombia.png" Height="83" Margin="365,21,0,0" RenderTransformOrigin="0.469,0.386"/>
+
+        </Grid>
         <ScrollViewer HorizontalAlignment="Left" Height="607" Grid.Row="1" VerticalAlignment="Top" Width="480">
             <StackPanel Height="Auto" Width="478">
                 <Grid x:Name="GridSeverence" Height="Auto">
