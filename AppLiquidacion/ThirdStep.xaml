@@ -56,22 +56,22 @@
             </Grid>
         </StackPanel>
         <StackPanel HorizontalAlignment="Left" Height="378" Margin="12,229,0,0" Grid.Row="1" VerticalAlignment="Top" Width="468">
-            <StackPanel x:Name="StackSalary"  HorizontalAlignment="Left" Height="auto" Margin="0,0,0,0" VerticalAlignment="Top" Width="Auto" Visibility="Collapsed">
+            <StackPanel x:Name="StackSalary"  HorizontalAlignment="Left" Height="auto" Margin="10,0,0,0" VerticalAlignment="Top" Width="Auto" Visibility="Collapsed">
                 <TextBlock x:Name="Salary" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="a" VerticalAlignment="Top"/>
             </StackPanel>
-            <StackPanel x:Name="StackSubsidyTransport"  HorizontalAlignment="Left" Height="auto" Margin="0,10,0,0" VerticalAlignment="Top" Width="Auto" Visibility="Collapsed">
+            <StackPanel x:Name="StackSubsidyTransport"  HorizontalAlignment="Left" Height="auto" Margin="10,10,0,0" VerticalAlignment="Top" Width="Auto" Visibility="Collapsed">
                 <TextBlock x:Name="SubsidyTransport" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="a" VerticalAlignment="Top"/>
             </StackPanel>
             <StackPanel x:Name="StackSalaryInKind"  HorizontalAlignment="Left" Height="auto" Margin="0,10,0,0" VerticalAlignment="Top" Width="Auto" Visibility="Collapsed">
                 <TextBlock x:Name="SalaryInKind" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="a" VerticalAlignment="Top"/>
             </StackPanel>
-            <StackPanel x:Name="StackSeverence" HorizontalAlignment="Left" Height="auto" Margin="0,10,0,0" VerticalAlignment="Top" Width="Auto" Visibility="Collapsed">
+            <StackPanel x:Name="StackSeverence" HorizontalAlignment="Left" Height="auto" Margin="10,10,0,0" VerticalAlignment="Top" Width="Auto" Visibility="Collapsed">
                 <TextBlock x:Name="Severence" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="a" VerticalAlignment="Top"/>
             </StackPanel>
-            <StackPanel x:Name="StackVacations" HorizontalAlignment="Left" Height="auto" Margin="0,10,0,0" VerticalAlignment="Top" Width="Auto" Visibility="Collapsed">
+            <StackPanel x:Name="StackVacations" HorizontalAlignment="Left" Height="auto" Margin="10,10,0,0" VerticalAlignment="Top" Width="Auto" Visibility="Collapsed">
                 <TextBlock x:Name="Vacations" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="a" VerticalAlignment="Top"/>
             </StackPanel>
-            <StackPanel x:Name="StackCompensation" HorizontalAlignment="Left" Height="auto" Margin="0,10,0,0" VerticalAlignment="Top" Width="Auto" Visibility="Collapsed">
+            <StackPanel x:Name="StackCompensation" HorizontalAlignment="Left" Height="auto" Margin="10,10,0,0" VerticalAlignment="Top" Width="Auto" Visibility="Collapsed">
                 <TextBlock x:Name="Compensation" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="a" VerticalAlignment="Top"/>
             </StackPanel>
         </StackPanel>
